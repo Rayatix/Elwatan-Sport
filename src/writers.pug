@@ -9,8 +9,12 @@ block content
         .container
             .news-container
                 section
+                    include include/components/cards/writer-info.pug
+                    include include/components/cards/writer-card.pug
 
-                //- Start Newsletter Section
+                //- Start Aside
                 div
-                    div.side-banner
+                    div.side-banner.js-skeleton
                         img(src= baseUrl + 'https://placehold.co/304x608' alt="side banner")
+
+

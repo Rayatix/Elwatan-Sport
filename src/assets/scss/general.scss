@@ -8,6 +8,7 @@
   --nav-active: #e1762a;
   --gray: #353535;
   --dark-orange: #d06518;
+  --text-dark-gray: #353535;
   --light-gray: #686868;
   --text-white: #ffffff;
   --text-gray: #686868;
@@ -136,38 +137,6 @@ body {
   }
 }
 
-// @media (max-width: 575.98px) {
-//   .container {
-//     padding-right: 0.5rem;
-//     padding-left: 0.5rem;
-//   }
-// }
-
-// @media (min-width: 768px) {
-//   .container {
-//     max-width: 720px;
-//   }
-// }
-
-// @media (min-width: 992px) {
-//   .container {
-//     max-width: 960px;
-//   }
-// }
-
-// @media (min-width: 1200px) {
-//   .container {
-//     max-width: 1140px;
-//   }
-// }
-
-// @media (min-width: 1400px) {
-//   .container {
-//     max-width: 1120px;
-//     overflow: hidden;
-//   }
-// }
-
 .text-4xl,
 .text-3xl {
   @apply max-md:text-2xl max-md:font-bold;
@@ -179,7 +148,6 @@ body {
 
 .p-0 {
   padding: 0;
-  overflow-x: hidden !important;
 }
 
 .text-xl {
