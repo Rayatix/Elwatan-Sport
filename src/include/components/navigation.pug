@@ -46,3 +46,18 @@ script.
             nav.classList.remove("scrolled");
         }
     });
+
+    //- For Nav Inner Navigation
+        document.addEventListener("DOMContentLoaded", () => {
+            const navs = document.querySelectorAll(".navigation");
+
+            const isHome =
+                window.location.pathname === "/" ||
+                window.location.pathname === "/index.html";
+
+            if (!isHome) {
+                navs.forEach((nav) => {
+                    nav.classList.add("inner-nav");
+                });
+            }
+        });
