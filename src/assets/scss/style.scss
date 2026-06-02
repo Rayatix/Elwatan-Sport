@@ -1,0 +1,15 @@
+@import "./tailwind";
+
+@import "_mixins";
+
+@import "general";
+
+@import "components/index";
+
+@import "layout/index.scss";
+
+@import "pages/index";
+
+@import "sections/index";
+
+@import "sliders/index";

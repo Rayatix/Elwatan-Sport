@@ -1,0 +1,187 @@
+.matches-tabs {
+  min-height: 215px;
+  overflow: hidden;
+
+  &__header {
+    margin-bottom: 24px;
+  }
+
+  .active {
+    background-color: var(--orange);
+    color: var(--text-white);
+  }
+
+  &__buttons {
+    justify-content: center;
+    gap: 8px;
+    border-bottom: unset;
+  }
+
+  &__btn {
+    padding: 4px 8px;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
+    background-color: #f2f2f2;
+    @include text-size(0.75rem, null, 700, sport-bold);
+    max-height: 27px;
+    display: flex;
+    align-items: center;
+
+    &::after {
+      content: "";
+      display: none;
+    }
+  }
+}
+
+.match-slider {
+  &__box {
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    box-shadow: 0px 0 6px -4px #000000;
+    -webkit-box-shadow: 0px 0 6px -4px #000000;
+    -moz-box-shadow: 0px 0 6px -4px #000000;
+    -o-box-shadow: 0px 0 6px -4px #000000;
+    -ms-box-shadow: 0px 0 6px -4px #000000;
+    padding: 8px;
+    overflow: hidden;
+    // position: relative;
+    // z-index: 99;
+  }
+
+  &__title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    padding-bottom: 8px;
+    gap: 6px;
+
+    &::after {
+      content: "";
+      width: 110%;
+      height: 1px;
+      position: absolute;
+      bottom: 0;
+      display: block;
+      background-color: var(--border-color);
+      right: -10px;
+      left: -10px;
+    }
+
+    &--name {
+      @include text-size(0.75rem, null, 700, "sport-bold");
+      color: var(--text-black);
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+      max-width: 130px;
+    }
+
+    &--soon {
+      background-color: var(--orange);
+      @include text-size(0.75rem, null, 700, "sport-bold");
+      color: var(--text-white);
+      padding: 4px;
+      border-radius: 5px;
+      -webkit-border-radius: 5px;
+      -moz-border-radius: 5px;
+      -ms-border-radius: 5px;
+      -o-border-radius: 5px;
+      max-height: 19px;
+      display: flex;
+      align-items: center;
+      flex-shrink: 0;
+    }
+
+    &--done {
+      background-color: #289155;
+    }
+
+    &--live {
+      position: relative;
+      @include text-size(0.75rem, null, 700, "sport-bold");
+      color: var(--text-black);
+      display: flex;
+      align-items: center;
+      text-transform: capitalize;
+
+      &::before {
+        content: "";
+        margin-left: 6px;
+        background-image: url("../images/icons/live.svg");
+        background-size: cover;
+        display: block;
+        width: 12px;
+        height: 12px;
+      }
+    }
+  }
+
+  &__time {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 6px;
+    margin-bottom: 6px;
+
+    span {
+      @include text-size(0.75rem, null, 700, sport-bold);
+      color: var(--text-gray);
+    }
+  }
+
+  &__content {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &--data {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--text-black);
+
+      h3 {
+        @include text-size(1rem, null, 700, sport-bold);
+        padding-left: 6px;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+        max-width: 130px;
+      }
+
+      img {
+        min-height: 24px;
+        max-width: 24px;
+        max-height: 24px;
+        object-fit: contain;
+        aspect-ratio: 1;
+        aspect-ratio: 0;
+      }
+    }
+
+    span {
+      @include text-size(1rem, null, 700, sport-bold);
+      color: var(--text-black);
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+      max-width: 80px;
+    }
+  }
+}
+
+
+.matches-tabs__panel.active {
+  z-index: 9;
+}

@@ -1,0 +1,136 @@
+.side-news-slider {
+  overflow: hidden;
+  position: relative;
+  margin-bottom: 30px;
+
+  @include xs {
+    margin-bottom: 0;
+  }
+
+  @include sm {
+    margin-bottom: 0;
+  }
+
+  &--home-space {
+    margin-bottom: 12px;
+
+    @include xs {
+      margin-bottom: 24px;
+    }
+
+    @include sm {
+      margin-bottom: 24px;
+    }
+
+    @include md {
+      margin-bottom: 36px;
+    }
+  }
+
+  .section-name {
+    margin: 0 12px 0px;
+    padding: 0 12px;
+  }
+
+  &__box {
+    position: relative;
+    overflow: hidden;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+
+    &::after {
+      content: url("../images/background/slider-overlay.svg");
+      position: absolute;
+      bottom: -12px;
+      width: 100%;
+      height: auto;
+      border-radius: 5px;
+      -webkit-border-radius: 5px;
+      -moz-border-radius: 5px;
+      -ms-border-radius: 5px;
+      -o-border-radius: 5px;
+
+      @include xs {
+        content: "";
+        left: 0;
+        background-image: url("../images/background/slider-overlay.svg");
+        background-repeat: no-repeat;
+        background-size: cover; // or contain
+        background-position: center;
+        height: 50%;
+      }
+
+      @include sm {
+        content: "";
+        left: 0;
+        background-image: url("../images/background/slider-overlay.svg");
+        background-repeat: no-repeat;
+        background-size: cover; // or contain
+        background-position: center;
+        height: 50%;
+      }
+
+      @include md {
+        content: "";
+        left: 0;
+        background-image: url("../images/background/slider-overlay.svg");
+        background-repeat: no-repeat;
+        background-size: cover; // or contain
+        background-position: center;
+        height: 50%;
+      }
+    }
+
+    span {
+      position: absolute;
+      top: 24px;
+    }
+
+    h3 {
+      @include text-size(1.25rem, 2rem, null, "sport-bold");
+      color: var(--text-white);
+      position: absolute;
+      bottom: 12px;
+      margin: 0 12px;
+      z-index: 1;
+    }
+
+    img {
+      border-radius: 5px;
+      -webkit-border-radius: 5px;
+      -moz-border-radius: 5px;
+      -ms-border-radius: 5px;
+      -o-border-radius: 5px;
+      width: 100%;
+      aspect-ratio: 0.75;
+      object-fit: cover;
+    }
+
+    &--small-image {
+      aspect-ratio: 1.07 !important;
+    }
+  }
+
+  &__pagination {
+    position: relative;
+    bottom: 0 !important;
+    z-index: 999999999 !important;
+
+    .swiper-pagination-bullet {
+      background-color: var(--slider-bullet);
+      opacity: 1;
+    }
+
+    .swiper-pagination-bullet-active {
+      width: 44px;
+      border-radius: 50px;
+      -webkit-border-radius: 50px;
+      -moz-border-radius: 50px;
+      -ms-border-radius: 50px;
+      -o-border-radius: 50px;
+    }
+  }
+}

@@ -1,0 +1,88 @@
+doctype html
+html(dir="rtl")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1")
+    //- link(rel='stylesheet' href= baseUrl + 'assets/css/aos.css')
+    link(rel='stylesheet' href= baseUrl + 'assets/css/swiper-bundle.min.css') 
+    link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css")
+    link(rel='stylesheet' href= baseUrl + 'assets/css/style.css')
+
+    //- link(rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.css")
+    //- script(src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.js")
+
+
+    //- For Skeleton
+    //- script(src="https://unpkg.com/skeleton-elements@latest/dist/skeleton-elements.min.js")
+    //- link(rel="stylesheet" href="https://unpkg.com/skeleton-elements@latest/dist/skeleton-elements.css")
+
+    //- For Lazy Loading
+    script(src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.8.8/dist/lazyload.min.js")
+
+    //- script(src= baseUrl + 'assets/js/skeleton.js')
+    script(src= baseUrl + 'assets/js/test.js')
+
+    title
+      block title
+        if lang === "ar"
+          | الوطن سبورت
+        else 
+          | elwatan sport
+    link(rel='icon' href= baseUrl + 'assets/images/logotit.png')
+
+  body
+    //- Start Header
+    block header
+      include components/header
+
+    //- Start Navigation
+    block navigation
+      include components/navigation
+      include components/layout/side-nav.pug
+
+    block content
+
+    //- Scroll Top
+    block scroll
+      include components/layout/scroll-top
+
+
+    //- Start Footer
+    block footer
+      include components/footer
+
+
+      //- Site Scripts
+      script(src=baseUrl + 'assets/js/swiper-bundle.min.js')
+      script(src=baseUrl + 'assets/js/plugins.js')
+      script(src=baseUrl + 'assets/js/sliders.js')
+
+      script.
+        Fancybox.bind("[data-fancybox]", {
+          Thumbs: {
+            autoStart: true
+          }
+        });
+
+
+
+
+
+
+
+        //- Image Lazy Loading
+      script.
+        //- document.addEventListener("DOMContentLoaded", function () {
+        //-     const lazyLoadInstance = new LazyLoad({
+        //-         elements_selector: ".lazy",
+        //-         threshold: 300,
+        //-         callback_loaded: (el) => {
+        //-         el.classList.add("loaded");
+        //-         },
+        //-     });
+        //-     });
+
+
+
+
+      block scripts

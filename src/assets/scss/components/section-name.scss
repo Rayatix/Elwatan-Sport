@@ -1,0 +1,43 @@
+.section-name {
+  border-radius: 50px;
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  -ms-border-radius: 50px;
+  -o-border-radius: 50px;
+  background-color: var(--title-bg);
+  text-align: center;
+  display: table;
+  margin-bottom: 8px;
+  color: var(--title-white);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  @include text-size(null, null, 700, "sport-bold");
+
+  &--big {
+    width: 107px;
+    min-width: 107px;
+    padding: 8px 24px;
+    font-size: 1rem;
+
+    @include xs {
+      margin: 0 12px 12px 12px;
+    }
+
+    @include sm {
+      margin: 0 12px 12px 12px;
+    }
+
+    @include md {
+      margin: 0 12px 12px 12px;
+    }
+  }
+
+  &--small {
+    width: 72px;
+    min-width: 72px;
+    padding: 6px 12px;
+    font-size: 0.75rem;
+    display: inline;
+  }
+}

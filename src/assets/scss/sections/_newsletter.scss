@@ -1,0 +1,71 @@
+.newsletter {
+  box-shadow: 0px 0 6px -4px #000000;
+  -webkit-box-shadow: 0px 0 6px -4px #000000;
+  -moz-box-shadow: 0px 0 6px -4px #000000;
+  -o-box-shadow: 0px 0 6px -4px #000000;
+  -ms-box-shadow: 0px 0 6px -4px #000000;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  height: fit-content;
+  margin-bottom: 24px;
+  padding: 12px;
+
+  &__image {
+    max-width: 92px;
+    width: 100%;
+    margin: auto auto 12px auto;
+  }
+
+  &__title {
+    @include text-size(1.125rem, 32px, 700, sport-bold);
+    color: var(--text-green);
+    margin-bottom: 6px;
+    text-align: center;
+  }
+
+  &__description {
+    @include text-size(0.875rem, 25px, 700, sport-bold);
+    color: var(--text-gray);
+    margin-bottom: 12px;
+    text-align: center;
+    display: block;
+  }
+
+  &__form {
+    position: relative;
+
+    input {
+      border: 1px solid #e4e4e4;
+      padding-left: 50px;
+      // display: block;
+
+      &::placeholder {
+        @include text-size(0.875rem, null, null, "sport-regular");
+      }
+
+      &:focus {
+        border: 1px solid #e4e4e4 !important;
+      }
+    }
+
+    button {
+      position: absolute;
+      top: 0;
+      left: 0;
+      background-color: var(--primary);
+      height: 100%;
+      width: 42px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 5px 0px 0px 5px;
+      -webkit-border-radius: 5px 0px 0px 5px;
+      -moz-border-radius: 5px 0px 0px 5px;
+      -ms-border-radius: 5px 0px 0px 5px;
+      -o-border-radius: 5px 0px 0px 5px;
+    }
+  }
+}

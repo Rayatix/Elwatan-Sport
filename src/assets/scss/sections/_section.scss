@@ -1,0 +1,41 @@
+// Side News
+.side-main-content {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 262px;
+}
+
+// Main News Section
+.news-split {
+  margin-bottom: 36px;
+
+  .news-container {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 262px;
+    gap: 24px;
+    overflow: hidden;
+
+    @include xs {
+      display: block;
+    }
+
+    @include sm {
+      display: block;
+    }
+
+    @include md {
+      display: block;
+    }
+
+    @include lg {
+      grid-template-columns: minmax(0, 1fr) 228px;
+    }
+  }
+
+  .content-box {
+    margin-bottom: 36px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}

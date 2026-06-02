@@ -1,0 +1,8 @@
+﻿mixin _(txt1, txt2= " ")
+    if lang === "ar"
+        if txt2 !== " "
+            | #{txt2}
+        else
+            | #{txt1}
+    else
+        | #{txt1}

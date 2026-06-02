@@ -1,0 +1,48 @@
+nav.navigation
+    div.container
+        div.navigation-box
+            div
+                h1.logo-text
+                    | الوطن سبورت   
+
+                a(href= baseUrl + "https://sport.elwatannews.com").logo
+                    img(src=baseUrl + 'assets/images/layout/nav-logo.svg' alt="elwatan sport")
+
+            ul.nav-links
+                li
+                    a.currentPage(class=currentPage === 'home' ? 'active' : '', href=baseUrl + '/') الرئيسية
+                li
+                    a.currentPage(class=currentPage === 'local' ? 'active' : '', href=baseUrl + '/local') أخبار محلية
+                li
+                    a.currentPage(class=currentPage === 'global' ? 'active' : '', href=baseUrl + '/global') أخبار عالمية
+                li
+                    a.currentPage(class=currentPage === 'arab' ? 'active' : '', href=baseUrl + '/arab') أخبار عربية
+                li
+                    a.currentPage(class=currentPage === 'articles' ? 'active' : '', href=baseUrl + '/articles') مقالات وتحليلات
+                li
+                    a.currentPage(class=currentPage === 'videos' ? 'active' : '', href=baseUrl + '/videos') فيديوهات
+                li
+                    a.currentPage(class=currentPage === 'photos' ? 'active' : '', href=baseUrl + '/photos') صـور
+
+            div.join-box
+                a(href="#").bt-md.bt-md--gray اشتراك
+                a(href="#").bt-md.bt-md--white تسجيل دخول
+
+script.
+    //- For Active Link Highlighting
+    const links = document.querySelectorAll("a.currentPage");
+    links.forEach(link => {
+        if (window.location.pathname === new URL(link.href).pathname) {
+            link.classList.add("active");
+        }
+    });
+
+    //- For Navigation Scroll Effect
+    const nav = document.querySelector("nav.navigation");
+    window.addEventListener("scroll", () => {
+        if (window.scrollY > 50) {
+            nav.classList.add("scrolled");
+        } else {
+            nav.classList.remove("scrolled");
+        }
+    });

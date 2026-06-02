@@ -1,0 +1,39 @@
+section.tabs.tabs--home-space(dir="rtl")
+    .tabs__header
+        .tabs__buttons.js-skeleton
+            span.tabs__indicator
+            button.tabs__btn(data-index="0") الأكثر قراءة
+            button.tabs__btn.active(data-index="1") اهتماماتي
+
+    .tabs__body.js-skeleton
+        .tabs__panel(data-index="0")
+            .register-content
+                h3 
+                    | قم بتسجيل الدخول او انشاء حساب لمتابعهة الموضوعا تلتي تهمك
+                a(href= baseUrl + "#").special-button.special-button--gray
+                    | تسجيل الدخول
+
+            .tabs-content
+                - for (let i = 0; i < 3; i++)
+                    a(href= baseUrl + "#")
+                        div
+                            img(src= baseUrl + "https://placehold.co/82x82" alt="")
+                        div
+                            span.section-name.section-name--small أخبار محلية
+                            h3 الصفقات مستمرة.. الوداد يضم البرازيلي بيدرينيو
+
+        .tabs__panel.active(data-index="1")
+            .register-content
+                h3 
+                    | قم بتسجيل الدخول او انشاء حساب لمتابعهة الموضوعا تلتي تهمك
+                a(href= baseUrl + "#").special-button.special-button--gray
+                    | تسجيل الدخول
+
+            .tabs-content
+                - for (let i = 0; i < 3; i++)
+                    a(href= baseUrl + "#")
+                        div
+                            img(src= baseUrl + "https://placehold.co/82x82" alt="")
+                        div
+                            span.section-name.section-name--small أخبار محلية
+                            h3 الصفقات مستمرة.. الوداد يضم البرازيلي بيدرينيو

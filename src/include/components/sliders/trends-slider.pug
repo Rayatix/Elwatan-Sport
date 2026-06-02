@@ -1,0 +1,176 @@
+section.trend-slider.trend-slider--dark
+    .container
+        //- Start Title
+        include ../title
+        +title('الترندات', '/trends', '/hello', true)
+
+        .swiper.trendsSlider
+            .swiper-wrapper(dir="rtl")
+                //- Main Slide 1
+                .swiper-slide
+                    .slider-box
+                        a.open-modal(href="javascript:void(0)" data-modal="1")
+                            .js-skeleton
+                                i.fas.fa-play.trend-category
+                                img.swiper-lazy(data-src= baseUrl + "https://placehold.co/283x377" alt="" loading="lazy")
+                            img.swiper-lazy(data-src=baseUrl + "assets/images/background/overlay.png" alt="" loading="lazy").trend-overlay
+                            .swiper-lazy-preloader.swiper-lazy-preloader-white
+                            .slider-content.js-skeleton
+                                h3
+                                    | "لعبنا جيدا".. جوارديولا لا يشعر بالقلق بعد رباعية سبورتنج
+                                .slider-status
+                                    div
+                                        i.far.fa-heart
+                                        span 1.2K
+                                    div
+                                        i.far.fa-thumbs-up
+                                        span 768
+                                
+                //- Main Slide 2
+                .swiper-slide
+                    .slider-box
+                        a.open-modal(href="javascript:void(0)" data-modal="2")
+                            .js-skeleton
+                                i.fas.fa-play.trend-category
+                                img.swiper-lazy(data-src= baseUrl + "https://placehold.co/283x377" alt="" loading="lazy")
+                            img.swiper-lazy(data-src=baseUrl + "assets/images/background/overlay.png" alt="" loading="lazy").trend-overlay
+                            .swiper-lazy-preloader.swiper-lazy-preloader-white
+                            .slider-content.js-skeleton
+                                h3
+                                    | "لعبنا جيدا".. جوارديولا لا يشعر بالقلق بعد رباعية سبورتنج
+                                .slider-status
+                                    div
+                                        i.far.fa-heart
+                                        span 1.2K
+                                    div
+                                        i.far.fa-thumbs-up
+                                        span 768
+                //- Main Slide 3
+                .swiper-slide
+                    .slider-box
+                        a.open-modal(href="javascript:void(0)" data-modal="3")
+                            .js-skeleton
+                                i.fas.fa-play.trend-category
+                                img.swiper-lazy(data-src= baseUrl + "https://placehold.co/283x377" alt="" loading="lazy")
+                            img.swiper-lazy(data-src=baseUrl + "assets/images/background/overlay.png" alt="" loading="lazy").trend-overlay
+                            .swiper-lazy-preloader.swiper-lazy-preloader-white
+                            .slider-content.js-skeleton
+                                h3
+                                    | "لعبنا جيدا".. جوارديولا لا يشعر بالقلق بعد رباعية سبورتنج
+                                .slider-status
+                                    div
+                                        i.far.fa-heart
+                                        span 1.2K
+                                    div
+                                        i.far.fa-thumbs-up
+                                        span 768
+                //- Main Slide 4
+                .swiper-slide
+                    .slider-box
+                        a.open-modal(href="javascript:void(0)" data-modal="4")
+                            .js-skeleton
+                                i.fas.fa-play.trend-category
+                                img.swiper-lazy(data-src= baseUrl + "https://placehold.co/283x377" alt="" loading="lazy")
+                            img.swiper-lazy(data-src=baseUrl + "assets/images/background/overlay.png" alt="" loading="lazy").trend-overlay
+                            .swiper-lazy-preloader.swiper-lazy-preloader-white
+                            .slider-content.js-skeleton
+                                h3
+                                    | "لعبنا جيدا".. جوارديولا لا يشعر بالقلق بعد رباعية سبورتنج
+                                .slider-status
+                                    div
+                                        i.far.fa-heart
+                                        span 1.2K
+                                    div
+                                        i.far.fa-thumbs-up
+                                        span 768
+                                
+
+
+
+
+
+//------------------------------------ Start Second Slider Modal ------------------------------------
+
+//- Start Modal 1
+.modal(data-modal="1")
+    span.modal-backdrop.close-modal
+    .modal-content
+        .modal-header
+            button.close-modal
+                i.fas.fa-times
+        .modal-body
+            .swiper.inside-slider(dir="rtl")
+                .swiper-wrapper
+                    - for (let i = 0; i < 7; i++)
+                        .swiper-slide.js-skeleton
+                                img.swiper-lazy(data-src="https://placehold.co/640x851/289155/ffffff?text=640px+851px" alt="" loading="lazy")
+                                .swiper-lazy-preloader.swiper-lazy-preloader-white
+                                .inside-slider__icons
+                                    button 
+                                        i.far.fa-heart
+                                    button 
+                                        i.far.fa-thumbs-up
+                .swiper-pagination.inside-slider__pagination
+
+//- Start Modal 2
+.modal(data-modal="2")
+    span.modal-backdrop.close-modal
+    .modal-content
+        .modal-header
+            button.close-modal
+                i.fas.fa-times
+        .modal-body
+            .swiper.inside-slider(dir="rtl")
+                .swiper-wrapper
+                    - for (let i = 0; i < 7; i++)
+                        .swiper-slide.js-skeleton
+                                img.swiper-lazy(data-src="https://placehold.co/640x851/289155/ffffff?text=640px+851px" alt="" loading="lazy")
+                                .swiper-lazy-preloader.swiper-lazy-preloader-white
+                                .inside-slider__icons
+                                    button 
+                                        i.far.fa-heart
+                                    button 
+                                        i.far.fa-thumbs-up
+                .swiper-pagination.inside-slider__pagination
+
+//- Start Modal 3
+.modal(data-modal="3")
+    span.modal-backdrop.close-modal
+    .modal-content
+        .modal-header
+            button.close-modal
+                i.fas.fa-times
+        .modal-body
+            .swiper.inside-slider(dir="rtl")
+                .swiper-wrapper
+                    - for (let i = 0; i < 7; i++)
+                        .swiper-slide.js-skeleton
+                                img.swiper-lazy(data-src="https://placehold.co/640x851/289155/ffffff?text=640px+851px" alt="" loading="lazy")
+                                .swiper-lazy-preloader.swiper-lazy-preloader-white
+                                .inside-slider__icons
+                                    button 
+                                        i.far.fa-heart
+                                    button 
+                                        i.far.fa-thumbs-up
+                .swiper-pagination.inside-slider__pagination
+
+//- Start Modal 4
+.modal(data-modal="4")
+    span.modal-backdrop.close-modal
+    .modal-content
+        .modal-header
+            button.close-modal
+                i.fas.fa-times
+        .modal-body
+            .swiper.inside-slider(dir="rtl")
+                .swiper-wrapper
+                    - for (let i = 0; i < 7; i++)
+                        .swiper-slide.js-skeleton
+                                img.swiper-lazy(data-src="https://placehold.co/640x851/289155/ffffff?text=640px+851px" alt="" loading="lazy")
+                                .swiper-lazy-preloader.swiper-lazy-preloader-white
+                                .inside-slider__icons
+                                    button 
+                                        i.far.fa-heart
+                                    button 
+                                        i.far.fa-thumbs-up
+                .swiper-pagination.inside-slider__pagination

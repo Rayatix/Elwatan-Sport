@@ -1,0 +1,98 @@
+header.header
+  section.header-box.container
+    div.mangers-box
+      div.manger
+        span رئيس مجلس الإدارة: 
+        span د. أحمد محمود 
+      div.manger
+        span رئيس التحرير:
+        span مصطفى عمار
+
+    div.social-box
+      ul 
+        li
+          button#popup-trigger.popup-trigger
+            i.fas.fa-search
+
+        li
+          a(target="_blank" href='https://www.facebook.com/ElWatanNews' title="Facebook")
+            i.fa-brands.fa-facebook-f      
+        li
+          a(target="_blank" href='https://twitter.com/elwatannews' title="X (Twitter)")
+            i.fa-brands.fa-x-twitter
+        li
+          a(target="_blank" href='https://www.youtube.com/user/ElWatanNews' title="YouTube")
+            i.fa-brands.fa-youtube
+        li
+          a(target="_blank" href='https://www.instagram.com/elwatannews' title="Instagram")
+            i.fa-brands.fa-instagram
+
+//- Search Overlay 
+#overlay.overlay
+  #overlay-background.overlay-background
+  #overlay-content.overlay-content
+    #overlay-close.fa.fa-times.fa-lg.overlay-close
+    form.signup-form(method="post" action="#",novalidate)
+      input#signup-name(type="text" name="name" autocomplete="off")
+      button.btn.btn-outline.submit-btn: span أبحث
+
+
+script.
+  // Calculate height
+  function calculateHeight() {
+    const content = document.getElementById('overlay-content');
+
+    const styles = window.getComputedStyle(content);
+
+    const contentHeight =
+      content.offsetHeight +
+      parseInt(styles.marginTop) +
+      parseInt(styles.marginBottom);
+
+    const windowHeight = window.innerHeight;
+
+    const finalHeight = windowHeight > contentHeight ? windowHeight : contentHeight;
+
+    return finalHeight;
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const overlay = document.getElementById('overlay');
+    const overlayBg = document.getElementById('overlay-background');
+    const trigger = document.getElementById('popup-trigger');
+    const closeBtn = document.getElementById('overlay-close');
+
+    // Resize handler
+    function handleResize() {
+      if (window.innerHeight < 560 && window.innerWidth > 600) {
+        overlay.classList.add('short');
+      } else {
+        overlay.classList.remove('short');
+      }
+
+      overlayBg.style.height = calculateHeight() + 'px';
+    }
+
+    window.addEventListener('resize', handleResize);
+
+    // Trigger initial resize
+    handleResize();
+
+    // Open
+    trigger.addEventListener('click', () => {
+      overlay.classList.add('open');
+
+      const firstInput = overlay.querySelector('.signup-form input');
+      if (firstInput) {
+        firstInput.select();
+      }
+    });
+
+    // Close
+    function closeOverlay() {
+      overlay.classList.remove('open');
+    }
+
+    overlayBg.addEventListener('click', closeOverlay);
+    closeBtn.addEventListener('click', closeOverlay);
+  });

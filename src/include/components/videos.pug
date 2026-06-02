@@ -1,0 +1,17 @@
+section.videos.videos--green
+    .container
+        +title('فيديوهات', '/videos', '/hello', true)
+
+        .video-container
+            a(href= baseUrl + "#").video-card.video-card__big.video-card--white.js-skeleton
+                img(src= baseUrl + "https://placehold.co/539x316" alt="")
+                h3 
+                    | سويلم: الأقرب استمرار الدوري بنظامه القديم.. وجاري التنسيق لتسليم الدرع للأهلي
+
+            .video-card.video-card__small-box
+                - for (let i = 0; i < 2; i++)
+                    a(href= baseUrl + "").video-card.video-card__small.video-card--video.js-skeleton
+                        .video-overlay
+                            img(src= baseUrl + "https://placehold.co/263x154" alt="")
+                        h3 
+                            | سويلم: الأقرب استمرار الدوري بنظامه القديم.. وجاري التنسيق لتسليم الدرع للأهلي

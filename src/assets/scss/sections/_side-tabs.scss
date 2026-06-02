@@ -1,0 +1,151 @@
+.tabs,
+.matches-tabs {
+  max-height: 510px;
+  min-height: 510px;
+  flex: 1;
+  margin-bottom: 36px;
+
+  &[dir="rtl"] {
+    direction: rtl;
+
+    .tabs__indicator {
+      right: 0;
+      left: auto;
+    }
+  }
+
+  &__header {
+    margin-bottom: 12px;
+  }
+
+  &__buttons {
+    position: relative;
+    display: flex;
+    border-bottom: 1px solid var(--border-color);
+  }
+
+  &__btn {
+    flex: 1;
+    padding: 16px 8px;
+    border: none;
+    background: none;
+    cursor: pointer;
+    position: relative;
+    transition: 0.3s;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    -ms-transition: 0.3s;
+    -o-transition: 0.3s;
+    @include text-size(1.125rem, null, 700);
+
+    &:first-of-type {
+      &::after {
+        content: "";
+        height: 25px;
+        width: 1px;
+        background-color: var(--border-color);
+        position: absolute;
+        left: 0;
+      }
+    }
+
+    &.active {
+      font-weight: 600;
+      color: #000;
+    }
+  }
+
+  &__indicator {
+    position: absolute;
+    bottom: 0;
+    height: 3px;
+    width: 0;
+    background: var(--border-active);
+    transition: all 0.3s ease;
+    left: 0;
+  }
+
+  &__body {
+    position: relative;
+  }
+
+  &__panel {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transform: translateX(30px);
+    transition: 0.35s ease;
+    -webkit-transform: translateX(30px);
+    -moz-transform: translateX(30px);
+    -ms-transform: translateX(30px);
+    -o-transform: translateX(30px);
+
+    &.active {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .register-content {
+      border-bottom: 1px solid var(--border-color);
+      margin-bottom: 12px;
+      padding-bottom: 12px;
+      text-align: center;
+
+      h3 {
+        @include text-size(0.9063rem, 27px, null, "sport-bold");
+        margin-bottom: 12px;
+      }
+
+      a {
+        @include text-size(0.75rem, null, 700);
+        display: flex;
+        align-items: center;
+        max-width: 101px;
+        margin: auto;
+        max-height: 34px;
+
+        &:hover {
+          color: var(--orange);
+        }
+      }
+    }
+
+    .tabs-content {
+      a {
+        margin-bottom: 12px;
+        padding-bottom: 12px;
+        border-bottom: 1px solid var(--border-color);
+        display: grid;
+        grid-template-columns: 82px 1fr;
+        gap: 12px;
+
+        &:last-of-type {
+          margin-bottom: 0;
+        }
+
+        img {
+          border-radius: 5px;
+          -webkit-border-radius: 5px;
+          -moz-border-radius: 5px;
+          -ms-border-radius: 5px;
+          -o-border-radius: 5px;
+          aspect-ratio: 1;
+          object-fit: cover;
+        }
+
+        h3 {
+          @include text-size(0.875rem, 22px, 700, "sport-bold");
+          max-height: 43px;
+          overflow: hidden;
+        }
+      }
+    }
+  }
+}
+
+
+.tabs {
+&--home-space {
+  margin-bottom: 12px;
+}
+}

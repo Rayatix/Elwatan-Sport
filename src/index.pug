@@ -1,0 +1,66 @@
+extends include/layout
+
+
+block scripts 
+  script.
+    //- clientsSliderInit()
+    //- businessWorldSlidersinit()
+    //- clientsfeedBackSliderInit()
+    //- certificationsSliderInit()
+    //- announcementSliderInit()
+    //- AOS.init({disable: window.innerWidth < 768, once: true});
+    //- new Accordion('.faq-accordion', {
+    //-   duration: 400,
+    //- });
+
+
+block content
+  include include/components/events/main-section.pug
+
+  include include/components/sliders/match-slider.pug
+
+  include include/components/sliders/trends-slider.pug
+
+  section.news-split
+    .container
+      .news-container
+        .news-box
+          .content-box
+            //- Start Title
+            +title('أخـــــــبار محلية', '/trends', '/hello', false)
+            //- Start News
+            include include/components/main-news.pug
+
+          .content-box
+            //- Start Title
+            +title('أخـــــــبار عـــــالمية', '/trends', '/hello', false)
+            //- Start News
+            include include/components/main-news-two.pug
+
+          .content-box
+            //- Start Title
+            +title('مقالات وتحليلات', '/trends', '/hello', false)
+            //- Start News
+            include include/components/sliders/related-slider.pug
+
+        .side-news
+          include include/components/side/tabs.pug
+          include include/components/side/big-side-slider.pug
+          include include/components/side/club-sorting.pug
+          include include/components/side/event-show.pug
+
+  include include/components/videos.pug
+  section.news-split
+    .container
+      .news-container
+        section
+          +title('أخبار عربية', '/trends', '/hello', false)
+          include include/components/main-news-card.pug
+
+        //- Start Newsletter Section
+        div
+          include include/components/side/newsletter.pug
+
+          //- Start Photos Slider
+          +title('صور', '/trends', '/hello', false)
+          include include/components/side/small-side-slider.pug

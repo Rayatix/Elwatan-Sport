@@ -1,0 +1,21 @@
+button.scrollToTopBtn(type="button")
+    | ↟
+
+
+script.
+    const scrollToTopBtn = document.querySelector(".scrollToTopBtn");
+    function handleScroll() {
+        if (window.scrollY > 100) {
+            scrollToTopBtn.classList.add("showBtn");
+        } else {
+            scrollToTopBtn.classList.remove("showBtn");
+        }
+    }
+    function scrollToTop() {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+    }
+    window.addEventListener("scroll", handleScroll);
+    scrollToTopBtn.addEventListener("click", scrollToTop);

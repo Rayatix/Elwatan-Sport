@@ -1,0 +1,76 @@
+div.mobile-nav
+    .container
+        .mobile-nav__data
+
+            button.menu-btn(type="button")
+                img(src= baseUrl + "assets/images/icons/nav-icon.svg" alt="menu")
+
+            a.logo(
+                href= baseUrl + "https://sport.elwatannews.com"
+            )
+                img(
+                    src= baseUrl + "assets/images/layout/nav-logo.svg"
+                    alt="elwatan sport"
+                )
+
+            a.mobile-nav__data--register(href="#")
+                | تسجيل الدخول
+                img(
+                    src= baseUrl + "assets/images/icons/person-icon.svg"
+                    alt=""
+                )
+
+    nav.side-menu#sideMenu
+
+        button.side-menu__close#closeBtn(type="button")
+            i.fas.fa-times
+
+        .side-menu__box
+            .side-menu__box--search
+
+                input(
+                    type="text"
+                    placeholder="ابحث هنا..."
+                    aria-label="Search"
+                )
+
+                button(type="submit")
+                    i.fas.fa-search
+
+        .side-menu__links
+            a(href="#").active الرئـيــســية
+            a(href="#") أخبار محلية
+            a(href="#") أخبار عالمية
+            a(href="#") أخبار عــــربية
+            a(href="#") مقالات وتحليلات
+            a(href="#") فيديوهات
+            a(href="#") صــــــور
+
+    // Overlay
+    .nav-overlay#overlay
+
+
+script.
+    const mobileNav = document.querySelector(".mobile-nav");
+
+    let lastScroll = 0;
+
+    window.addEventListener("scroll", () => {
+    const currentScroll = window.scrollY;
+
+    // after scrolling
+    if (currentScroll > 50) {
+        mobileNav.classList.add("sticky");
+    } else {
+        mobileNav.classList.remove("sticky");
+    }
+
+    // hide on scroll up
+    if (currentScroll < lastScroll && currentScroll > 50) {
+        mobileNav.classList.add("hide");
+    } else {
+        mobileNav.classList.remove("hide");
+    }
+
+    lastScroll = currentScroll;
+    });

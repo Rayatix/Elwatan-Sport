@@ -1,0 +1,9 @@
+section.swiper.side-news-slider(dir="rtl")
+    .swiper-wrapper
+        - for (let i = 0; i < 3; i++)
+            .swiper-slide.js-skeleton
+                .side-news-slider__box
+                    h3
+                        | "لعبنا جيدا".. جوارديولا لا يشعر بالقلق بعد رباعية سبورتنج
+                    img(src= baseUrl + "https://placehold.co/418x289" alt="").side-news-slider__box--small-image
+    .swiper-pagination.side-news-slider__pagination

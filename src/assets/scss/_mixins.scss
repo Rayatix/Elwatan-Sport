@@ -1,0 +1,92 @@
+// ========================================
+// Directional
+// ========================================
+
+@mixin ltr() {
+  html[dir="ltr"] & {
+    @content;
+  }
+}
+@mixin rtl() {
+  html[dir="rtl"] & {
+    @content;
+  }
+}
+
+// ========================================
+// Position
+// ========================================
+@mixin center($position) {
+  position: absolute;
+
+  @if $position == "v" {
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+  } @else if $position == "h" {
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translate(-50%);
+  } @else if $position == "both" {
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  }
+}
+
+// ========================================
+// MEDIA QUERY
+// ========================================
+
+// Mobile
+@mixin xs {
+  @media (max-width: 575.98px) {
+    @content;
+  }
+}
+
+// Tablet
+@mixin sm {
+  @media (min-width: 576px) and (max-width: 767.98px) {
+    @content;
+  }
+}
+
+// Ipad
+@mixin md {
+  @media (min-width: 768px) and (max-width: 991.98px) {
+    @content;
+  }
+}
+
+// Ipad Pro
+@mixin lg {
+  @media (min-width: 992px) and (max-width: 1199.98px) {
+    @content;
+  }
+}
+
+// Desktop
+@mixin xl {
+  @media (max-width: 1200px) {
+    @content;
+  }
+}
+
+// Large Desktop
+@mixin xxl {
+  @media (max-width: 1400px) {
+    @content;
+  }
+}
+
+// Custom
+@mixin custom($size) {
+  @media (max-width: $size) {
+    @content;
+  }
+}

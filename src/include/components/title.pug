@@ -1,0 +1,6 @@
+mixin title(text, url, iconUrl, isWhite = false)
+    .title.js-skeleton
+        a(href=url)
+            h3(class='title-text' + (isWhite ? ' title-text--white' : ''))= text
+        a(href=iconUrl).title-icon
+            i.fas.fa-angle-left

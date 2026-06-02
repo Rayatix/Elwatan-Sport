@@ -1,0 +1,10 @@
+section.newsletter.js-skeleton
+    img(src= baseUrl + "assets/images/icons/newsletter.svg" alt="").newsletter__image
+    h3.newsletter__title
+        | النشرة البريدية
+    span.newsletter__description
+        | اشترك معنا ليصلك كل ما هو خاص وجديد في عالم الرياضة
+    form(action="/submit" method="POST").newsletter__form
+        input#email(type="email" name="email" placeholder="ادخل الايميل")
+        button(type="submit")
+            img(src= baseUrl + "assets/images/icons/send.svg" alt="")

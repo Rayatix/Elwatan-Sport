@@ -1,0 +1,11 @@
+section.related-slider
+  .related-slider-slide(dir="rtl")
+    .swiper-wrapper
+      - for (let i = 0; i < 3; i++)
+        .swiper-slide.related-slider-slide__item.js-skeleton
+          .related-slider-slide__image
+            img.swiper-lazy(data-src= baseUrl + "https://placehold.co/64x64" alt="" loading="lazy")
+            .swiper-lazy-preloader.swiper-lazy-preloader-white
+          .related-slider-slide__content
+            span عادل محمد عزام
+            h3 «الكاستن».. «مسعد» بورسعيد و«نور» الكرة المصرية

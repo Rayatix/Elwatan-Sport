@@ -1,0 +1,62 @@
+.title {
+  border-bottom: 2px solid var(--border-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 12px;
+  margin-bottom: 12px;
+  position: relative;
+  z-index: 99;
+
+  h3 {
+    @include text-size(1.375rem, null, 700, "sport-bold");
+  }
+}
+
+.title:hover .title-icon i {
+  margin-right: 6px;
+}
+
+.title-text {
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: -14px;
+    width: 100%;
+    height: 2px;
+    background-color: var(--border-active);
+    right: 0;
+  }
+
+  &--white {
+    color: var(--title-light);
+  }
+}
+
+.title-icon {
+  background-color: var(--orange);
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-shrink: 0;
+
+  i {
+    font-size: 1rem;
+    color: var(--icon-white);
+    font-weight: bold;
+     transition: margin-right 0.3s ease;
+    -webkit-transition: margin-right 0.3s ease;
+    -moz-transition: margin-right 0.3s ease;
+    -ms-transition: margin-right 0.3s ease;
+    -o-transition: margin-right 0.3s ease;
+  }
+}

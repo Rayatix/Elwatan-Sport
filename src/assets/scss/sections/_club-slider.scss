@@ -1,0 +1,43 @@
+.club-container {
+  margin-bottom: 36px;
+
+  overflow: hidden;
+  
+  .club-slider {
+    overflow: hidden;
+  }
+}
+
+.club-box {
+  border: 1px solid var(--off-white);
+  background-color: var(--black);
+  padding: 12px 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  height: 40px;
+  max-height: 40px;
+  overflow: hidden;
+
+  h3 {
+    font-size: 0.75rem;
+    color: var(--text-white);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  img {
+    flex-shrink: 0;
+    width: 100%;
+    min-width: 36px;
+    max-width: 36px;
+    object-fit: scale-down;
+  }
+}

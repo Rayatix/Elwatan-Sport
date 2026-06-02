@@ -1,0 +1,115 @@
+//- .lazy-card
+//-     .loader
+
+//-     img.lazy-img(
+//-         data-src="https://picsum.photos/600/400"
+//-         alt="image"
+//-     )
+
+//- .lazy-box
+//-     .loader
+
+//-     img.lazy(
+//-         data-src=baseUrl + 'assets/images/layout/footer-logo.svg'
+//-         alt=""
+//-     )
+
+.card.skeleton
+    .card__image.skel.skel-img
+
+    .card__content
+        h3.card__title.skel.skel-text
+        p.card__desc.skel.skel-text
+
+        
+footer.footer
+  a(href="https://sport.elwatannews.com").footer-logo
+      img(src= baseUrl + 'assets/images/layout/footer-logo.svg', alt="elwatan sport")
+  
+  ul.footer-links
+    li
+      a(href="") الرئيسية
+    li
+      a(href="") أخبار محلية
+    li
+      a(href="") أخبار عالمية
+    li
+      a(href="") مباريات
+    li
+      a(href="") مقالات الرأي
+    li
+      a(href="") دوريــات وبطولات
+    li
+      a(href="") صور وفيديوهات
+  
+  div.footer-related
+    div.container
+      ul.footer-related-links
+        li
+          a(href="") سياسة الخصوصية
+        li
+          a(href="") شروط الاستخدام
+        li
+          a(href="") اتصل بنا
+      
+      span.footer-copyright
+        | جميع حقوق النشر محفوظة لموقع الوطن (إحدى شركات مجموعة المستقبل).
+
+      span.footer-development
+        | تصميم وتطوير فريق الوطن
+
+script.
+  //- new LazyLoad({
+  //-   elements_selector: ".lazy",
+
+  //-     callback_loaded: (element) => {
+  //-         element.parentElement.classList.add("loaded");
+  //-     }
+  //- });
+
+
+
+  //-     document.addEventListener("DOMContentLoaded", () => {
+  //-         const cards = document.querySelectorAll(".card");
+
+  //-         // fake loading example
+  //-         setTimeout(() => {
+  //-             cards.forEach(card => {
+  //-                 card.classList.remove("skeleton");
+  //-             });
+  //-         }, 1500);
+  //-     });
+
+
+
+      //- 
+
+
+      
+  //- const lazyImages = document.querySelectorAll(".lazy-img");
+
+  //- const observer = new IntersectionObserver((entries, observer) => {
+  //-     entries.forEach(entry => {
+
+  //-         if (!entry.isIntersecting) return;
+
+  //-         const img = entry.target;
+  //-         const card = img.closest(".lazy-card");
+  //-         const loader = card.querySelector(".loader");
+
+  //-         img.src = img.dataset.src;
+
+  //-         img.onload = () => {
+  //-             img.classList.add("loaded");
+  //-             loader.classList.add("hide");
+  //-         };
+
+  //-         observer.unobserve(img);
+  //-     });
+
+  //- }, {
+  //-     threshold: 0.1,
+  //-     rootMargin: "0px 0px 100px 0px"
+  //- });
+
+  //- lazyImages.forEach(img => observer.observe(img));

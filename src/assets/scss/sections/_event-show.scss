@@ -1,0 +1,27 @@
+.side-show-event {
+  img {
+    border: 5px;
+    aspect-ratio: 1.06;
+    width: 100%;
+    min-width: 100%;
+    max-width: 240px;
+    object-fit: fill;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+
+    @include xs {
+      margin: 0 auto;
+    }
+
+    @include sm {
+      margin: 0 auto;
+    }
+
+    @include md {
+      margin: 0 auto;
+    }
+  }
+}

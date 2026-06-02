@@ -1,0 +1,83 @@
+.inside-slider {
+  position: relative;
+  overflow: hidden;
+  max-width: 640px;
+  min-height: 851px;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+
+  @include xs {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+
+  @include sm {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+
+  img {
+    object-fit: cover;
+    width: 100%;
+    aspect-ratio: 0.75;
+  }
+
+  &__icons {
+    display: flex;
+    gap: 12px;
+    position: absolute;
+    bottom: 18px;
+    right: 18px;
+    cursor: pointer;
+
+    i {
+      @include text-size(1rem, auto);
+      color: var(--text-white);
+      transition: all 0.25s ease-in-out;
+      -webkit-transition: all 0.25s ease-in-out;
+      -moz-transition: all 0.25s ease-in-out;
+      -ms-transition: all 0.25s ease-in-out;
+      -o-transition: all 0.25s ease-in-out;
+
+      &:hover {
+        color: var(--text-orange);
+      }
+    }
+  }
+
+  &__pagination {
+    top: 0 !important;
+    z-index: 99 !important;
+
+    .swiper-pagination-bullet {
+      background-color: var(--slider-bullet);
+      opacity: 1;
+      width: 75px;
+      height: 5px;
+      border-radius: 50px;
+      -webkit-border-radius: 50px;
+      -moz-border-radius: 50px;
+      -ms-border-radius: 50px;
+      -o-border-radius: 50px;
+
+      @include xs {
+        width: 30px;
+      }
+
+      @include sm {
+        width: 30px;
+      }
+    }
+
+    .swiper-pagination-bullet-active {
+      background-color: var(--white);
+    }
+  }
+
+  .swiper-pagination {
+    height: 35px;
+  }
+}
