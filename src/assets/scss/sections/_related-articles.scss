@@ -1,0 +1,52 @@
+.related-articles {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    border-bottom: 1px solid #d9d9d9;
+    margin-bottom: 36px;
+    padding-bottom: 24px;
+    
+    @include xs {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    @include sm {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    &__box {
+        display: flex;
+        align-items: flex-start;
+        gap: 12px;
+        background-color: #FAFAFA;
+
+        @include xs {
+            align-items: center;
+        }
+        
+        @include sm {
+            align-items: center;
+        }
+
+        @include md {
+            align-items: center;
+        }
+    }
+
+    &__image {
+        width: 130px;
+        height: 130px;
+        object-fit: cover;
+        border-radius: 0 8px 8px 0;
+        flex-shrink: 0;
+    }
+
+    &__article {
+        @include text-size(1.125rem, 1.875rem, 700, sport-bold);
+        color: var(--text-black);
+        display: -webkit-box;
+        -webkit-line-clamp: 4;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+}

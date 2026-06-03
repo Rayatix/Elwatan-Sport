@@ -1,0 +1,54 @@
+extends include/layout
+include include/components/title.pug
+
+
+
+block content
+    include include/components/sliders/match-slider.pug
+
+    section.inner-split
+        .container
+            .news-container
+                section
+                    section
+                        include include/components/layout/breadcrumb.pug
+                        
+                        .article-details-box.js-skeleton
+                            h2.article-details-box__title 
+                                | بيراميدز يتمسك بالكرواتي يورتشيتش رغم السقوط أمام المصري
+                            .article-details-box__image-box
+                                img(src= baseUrl + "https://placehold.co/837x491", alt="").article-details-box__image-box--image
+                                span.article-details-box__image-box--title محمد صلاح نجم ليفربول
+                            span.article-details-box__time
+                                | 11:32 م | الثلاثاء 03 ديسمبر 2024
+                            .article-details-box__writer
+                                h3.article-details-box__writer--name
+                                    span 
+                                        | كتب :
+                                    | محمود أحمد السعيد
+                                button.share-button
+                                    img(src= baseUrl + "assets/images/icons/share-icon.svg", alt="")
+                                    span مشاركة
+
+
+                        include include/components/article-content.pug
+                        
+                        //- Related Articles
+                        section
+                            +title('أخـــــــبار ذات صلة', '/writers-details.html', false)
+                            include include/components/cards/related-articles.pug
+
+                        include include/components/article-content.pug
+
+
+                        include include/components/keywords.pug
+                        
+                
+                //- Start Aside
+                div
+                    div.side-banner.js-skeleton
+                        img(src= baseUrl + 'https://placehold.co/304x608' alt="side banner")
+
+                    section
+                        +title('مقالات اكثر قراءة', '/writers-details.html', false)
+                        include include/components/side/most-viewed-articles.pug
