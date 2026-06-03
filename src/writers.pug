@@ -6,7 +6,7 @@ include include/components/title.pug
 block content
     include include/components/sliders/match-slider.pug
 
-    section.news-split
+    section.inner-split
         .container
             .news-container
                 section
@@ -19,4 +19,5 @@ block content
                         img(src= baseUrl + 'https://placehold.co/304x608' alt="side banner")
 
                     section
-                        +title('مقالات اكثر قراءة', '/trends', '/hello', false)
+                        +title('مقالات اكثر قراءة', '/writers-details.html', false)
+                        include include/components/side/most-viewed-articles.pug

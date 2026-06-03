@@ -1,0 +1,34 @@
+.most-viewed-articles {
+    display: flex;
+    gap: 12px;
+    padding: 20px 12px;
+    margin-bottom: 24px;
+
+    @include border-card;
+
+    &__image {
+        flex-shrink: 0;
+        wdith: 90px;
+        height: 90px;
+        border-radius: 50%;
+    }
+
+    &__info {
+        
+    } 
+    
+    &__title {
+        @include text-size(1rem, 1.5625rem, 300, sport-regular);
+        color: var(--text-gray);
+        margin-bottom: 12px;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+    
+    &__name {
+        @include text-size(1rem, 1.5625rem, 700, sport-bold);
+        color: var(--text-orange);
+    }
+}

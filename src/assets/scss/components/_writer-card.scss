@@ -2,20 +2,12 @@
   display: flex;
   align-items: flex-start;
   gap: 24px;
-  box-shadow: 0px 0 6px -4px #000000;
-  -webkit-box-shadow: 0px 0 6px -4px #000000;
-  -moz-box-shadow: 0px 0 6px -4px #000000;
-  -o-box-shadow: 0px 0 6px -4px #000000;
-  -ms-box-shadow: 0px 0 6px -4px #000000;
-  border-radius: 5px;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  -ms-border-radius: 5px;
-  -o-border-radius: 5px;
   padding: 24px 36px;
   min-height: 185px;
   max-height: 185px;
   margin-bottom: 24px;
+
+  @include border-card;
 
   &__image {
     flex-shrink: 0;
