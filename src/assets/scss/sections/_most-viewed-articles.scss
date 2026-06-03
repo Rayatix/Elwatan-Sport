@@ -30,5 +30,9 @@
     &__name {
         @include text-size(1rem, 1.5625rem, 700, sport-bold);
         color: var(--text-orange);
+        display: -webkit-box;
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
     }
 }

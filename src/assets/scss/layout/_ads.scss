@@ -1,3 +1,21 @@
 .side-banner {
   margin: auto auto 24px auto;
+  
+  @include xs {
+    display: flex;
+    justify-content: center;
+    margin: 24px auto 24px auto;
+  }
+  
+  @include sm {
+    display: flex;
+    justify-content: center;
+    margin: 24px auto 24px auto;
+  }
+  
+  @include md {
+    display: flex;
+    justify-content: center;
+    margin: 24px auto 24px auto;
+  }
 }

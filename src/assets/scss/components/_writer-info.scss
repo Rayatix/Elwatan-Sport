@@ -7,6 +7,14 @@
 
   @include border-card;
 
+  @include xs {
+    padding: 12px 12px;
+  }
+  
+  @include sm {
+    padding: 12px 12px;
+  }
+
   &__image {
     flex-shrink: 0;
     width: 129px;
@@ -16,11 +24,25 @@
     -moz-border-radius: 50%;
     -ms-border-radius: 50%;
     -o-border-radius: 50%;
+    
+    @include xs {
+      width: 100px;
+      height: 100px;
+    }
+    
+    @include sm {
+      width: 100px;
+      height: 100px;
+    }
   }
 
   &__name {
     margin-bottom: 12px;
     @include text-size(1.125rem, 2rem, 700, sport-bold);
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
   }
 
   &__job {
@@ -28,6 +50,10 @@
     @include text-size(1.125rem, 2rem, 700, sport-bold);
     color: var(--text-orange);
     display: block;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
   }
 
   &__articles {

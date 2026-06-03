@@ -6,8 +6,16 @@
   min-height: 185px;
   max-height: 185px;
   margin-bottom: 24px;
-
+  
   @include border-card;
+  
+  @include xs {
+    padding: 12px 12px;
+  }
+  
+  @include sm {
+    padding: 12px 12px;
+  }
 
   &__image {
     flex-shrink: 0;
