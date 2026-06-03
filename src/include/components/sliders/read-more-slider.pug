@@ -1,0 +1,12 @@
+section.related-slider
+  .read-more-slide(dir="rtl")
+    .swiper-wrapper
+      - for (let i = 0; i < 6; i++)
+        a.swiper-slide(href= baseUrl + 'writers-details.html').most-viewed-articles.js-skeleton
+            img.swiper-lazy(src= baseUrl + 'https://placehold.co/129x129' alt="most viewed article" loading="lazy").most-viewed-articles__image
+            .swiper-lazy-preloader.swiper-lazy-preloader-white
+            .most-viewed-article__info
+                h4.most-viewed-articles__title
+                    | 7 تحديات أمام مجلس إدارة اتحاد الكرة الجديد
+                p.most-viewed-articles__name
+                    | عادل عزام

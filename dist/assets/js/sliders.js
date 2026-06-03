@@ -239,3 +239,58 @@ var relatedSlider = new Swiper(".related-slider-slide", {
     },
   },
 });
+
+
+// Read More Slider
+var readMoreSlider = new Swiper(".read-more-slide", {
+  slidesPerView: 2.5,
+  spaceBetween: 24,
+  freeMode: true,
+  loop: true,
+  rtl: true,
+
+  on: {
+    init: function () {
+      const el = this.el;
+
+      el.addEventListener("mouseenter", () => {
+        this.autoplay.stop();
+      });
+
+      el.addEventListener("mouseleave", () => {
+        this.autoplay.start();
+      });
+    },
+  },
+
+  autoplay: {
+    delay: 2500,
+    disableOnInteraction: false,
+  },
+
+  lazy: {
+    loadPrevNext: true,
+    loadOnTransitionStart: true,
+  },
+
+  breakpoints: {
+    0: {
+      slidesPerView: 1.5,
+    },
+    300: {
+      slidesPerView: 1.5,
+    },
+    575.98: {
+      slidesPerView: 1.5,
+    },
+    767.98: {
+      slidesPerView: 1.8,
+    },
+    991.98: {
+      slidesPerView: 2.5,
+    },
+    1199.98: {
+      slidesPerView: 2.5,
+    },
+  },
+});

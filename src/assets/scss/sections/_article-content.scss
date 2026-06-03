@@ -1,0 +1,42 @@
+.article-content {
+    border-bottom: 1px solid #d9d9d9;
+    margin-bottom: 24px;
+
+
+    p, h1, h2, h3, h4, h5, h6, a, article {
+        @include text-size(1.25rem, 1.875rem, 300, sport-regular);
+        margin-bottom: 24px;
+        
+        @include xs {
+            @include text-size(1.125rem, 1.75rem, 300, sport-regular);
+        }
+    }
+
+    ul {
+        list-style: disc;
+    }
+    
+    ul, ol {
+        padding-right: 24px;
+        position: relative;
+        margin-bottom: 24px;
+        
+        li {
+            margin-bottom: 16px;
+            margin-right: 24px;
+            
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+
+        &::before {
+            content: "";
+            border: 2px solid var(--border-active);
+            display: block;
+            position: absolute;
+            right: 0;
+            height: 100%;
+        }
+    }
+}

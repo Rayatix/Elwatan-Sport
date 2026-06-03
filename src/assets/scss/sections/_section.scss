@@ -68,10 +68,6 @@
     @include md {
       display: block;
     }
-
-    // @include lg {
-    //   grid-template-columns: minmax(0, 1fr) 228px;
-    // }
   }
 
   .content-box {

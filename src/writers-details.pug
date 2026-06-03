@@ -2,6 +2,30 @@ extends include/layout
 include include/components/title.pug
 
 
+
 block content
-    h1
-    | Writers Details
+    include include/components/sliders/match-slider.pug
+
+    section.inner-split
+        .container
+            .news-container
+                section
+                    section
+                        include include/components/layout/breadcrumb.pug
+                        include include/components/cards/journalist-card.pug
+                        include include/components/article-content.pug
+
+                    section
+                        +title('إقـــــرأ أيضــــــــــــــا', '/writers-details.html', false)
+                        include include/components/sliders/read-more-slider.pug
+                        
+                
+                //- Start Aside
+                div
+                    div.side-banner.js-skeleton
+                        img(src= baseUrl + 'https://placehold.co/304x608' alt="side banner")
+
+                    section
+                        +title('مقالات اكثر قراءة', '/writers-details.html', false)
+                        include include/components/side/most-viewed-articles.pug
+                        

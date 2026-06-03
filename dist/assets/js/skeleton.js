@@ -124,7 +124,9 @@ class AutoSkeleton {
           "P",
           "SPAN",
           "A",
+          "UL",
           "LI",
+          "I",
           "FORM",
           "INPUT",
         ].includes(child.tagName)

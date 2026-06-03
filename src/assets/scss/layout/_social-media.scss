@@ -1,0 +1,23 @@
+.social-media {
+    display: flex;
+    gap: 12px;
+    flex-shrink: 0;
+
+    &__link {
+        width: 35px;
+        height: 35px;
+        color: var(--white);
+        background-color: #B9550D;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        @include text-size(20px, normal, unset, unset);
+        
+        @include xs {
+            width: 30px;
+            height: 30px;
+            @include text-size(14px, normal, unset, unset);
+        }
+    }
+}
