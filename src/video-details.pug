@@ -1,0 +1,61 @@
+extends include/layout
+include include/components/title.pug
+
+
+
+block content
+    include include/components/sliders/match-slider.pug
+
+    section.inner-split
+        .container
+            .news-container         
+                //- Related Articles
+                section
+
+                    //- Breadcrumb
+                    section
+                        include include/components/layout/breadcrumb.pug
+
+
+
+                         .article-details-box.js-skeleton
+                                h2.article-details-box__title 
+                                    | بيراميدز يتمسك بالكرواتي يورتشيتش رغم السقوط أمام المصري
+                                .article-details-box__image-box
+                                    img(src= baseUrl + "https://placehold.co/837x491", alt="").article-details-box__image-box--image
+                                    
+                                .article-details-box__writer
+                                    h3.article-details-box__writer--name
+                                        span.article-details-box__time
+                                            | 11:32 م | الثلاثاء 03 ديسمبر 2024
+
+
+
+                    //- Video Details
+                    section
+
+
+
+                    //- Videos
+                    section
+                        +title('يمكنك مشاهدة أيضا', '/writers-details.html', false)
+                        .big-video-card-container
+                            - for (let i = 0; i < 3; i++)
+                                include include/components/cards/video-big-card.pug
+                        
+                
+                //- Start Aside
+                div
+                    div.side-banner.js-skeleton
+                        img(src= baseUrl + 'https://placehold.co/304x608' alt="side banner")
+                    
+                    //- Live Banner
+                    section 
+                        include include/components/side/live-banner.pug
+                    
+
+                    //- Start Side Videos
+                    section
+                        +title('فيديوهات أكثر مشاهدة', '/writers-details.html', false)
+                        - for (let i = 0; i < 4; i++)
+                            include include/components/cards/extra-small-video-card.pug
