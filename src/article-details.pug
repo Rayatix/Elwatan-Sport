@@ -50,8 +50,11 @@ block content
                         img(src= baseUrl + 'https://placehold.co/304x608' alt="side banner")
 
                     //- Start Important News
+                    - const cardClass = "inner-page-card"
                     section
-                        +title('مقالات اكثر قراءة', '/writers-details.html', false)
+                        +title('أخبار تهمك', '/writers-details.html', false)
+                        - for (let i = 0; i < 4; i++)
+                            include include/components/side/small-card.pug
 
                     //- Start Slider
                     section

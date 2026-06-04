@@ -110,36 +110,36 @@
       }
     }
 
-    .tabs-content {
-      a {
-        margin-bottom: 12px;
-        padding-bottom: 12px;
-        border-bottom: 1px solid var(--border-color);
-        display: grid;
-        grid-template-columns: 82px 1fr;
-        gap: 12px;
+    // .tabs-content {
+    //   a {
+    //     margin-bottom: 12px;
+    //     padding-bottom: 12px;
+    //     border-bottom: 1px solid var(--border-color);
+    //     display: grid;
+    //     grid-template-columns: 82px 1fr;
+    //     gap: 12px;
 
-        &:last-of-type {
-          margin-bottom: 0;
-        }
+    //     &:last-of-type {
+    //       margin-bottom: 0;
+    //     }
 
-        img {
-          border-radius: 5px;
-          -webkit-border-radius: 5px;
-          -moz-border-radius: 5px;
-          -ms-border-radius: 5px;
-          -o-border-radius: 5px;
-          aspect-ratio: 1;
-          object-fit: cover;
-        }
+    //     img {
+    //       border-radius: 5px;
+    //       -webkit-border-radius: 5px;
+    //       -moz-border-radius: 5px;
+    //       -ms-border-radius: 5px;
+    //       -o-border-radius: 5px;
+    //       aspect-ratio: 1;
+    //       object-fit: cover;
+    //     }
 
-        h3 {
-          @include text-size(0.875rem, 22px, 700, "sport-bold");
-          max-height: 43px;
-          overflow: hidden;
-        }
-      }
-    }
+    //     h3 {
+    //       @include text-size(0.875rem, 22px, 700, "sport-bold");
+    //       max-height: 43px;
+    //       overflow: hidden;
+    //     }
+    //   }
+    // }
   }
 }
 
