@@ -95,11 +95,49 @@
 // Cards Border
 // ========================================
 
+// @mixin border-card($radius: 8px) {
+//     border: 1px solid #d9d9d9;
+//     border-radius: $radius;
+//     -webkit-border-radius: $radius;
+//     -moz-border-radius: $radius;
+//     -ms-border-radius: $radius;
+//     -o-border-radius: $radius;
+// }
+
 @mixin border-card($radius: 8px) {
+    position: relative;
     border: 1px solid #d9d9d9;
     border-radius: $radius;
-    -webkit-border-radius: $radius;
-    -moz-border-radius: $radius;
-    -ms-border-radius: $radius;
-    -o-border-radius: $radius;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    background: #fff;
+
+    &::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        border-radius: inherit;
+        padding: 1px;
+
+        background: linear-gradient(
+            135deg,
+            #e1762a,
+            #045025
+        );
+
+        -webkit-mask:
+            linear-gradient(#fff 0 0) content-box,
+            linear-gradient(#fff 0 0);
+
+        -webkit-mask-composite: xor;
+        mask-composite: exclude;
+
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        pointer-events: none;
+    }
+
+    &:hover::before {
+        opacity: 1;
+    }
 }
