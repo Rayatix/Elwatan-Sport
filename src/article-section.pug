@@ -1,0 +1,36 @@
+extends include/layout
+include include/components/title.pug
+
+
+
+block content
+    include include/components/sliders/match-slider.pug
+
+    section.inner-split
+        .container
+            .news-container           
+                //- Related Articles
+                section
+                    +title('أخـــــــبار محلية', '/writers-details.html', false)
+                    include include/components/cards/section-card.pug
+                    
+                            
+
+
+                        
+                
+                //- Start Aside
+                div
+                    div.side-banner.js-skeleton
+                        img(src= baseUrl + 'https://placehold.co/304x608' alt="side banner")
+
+                    //- Start Important News
+                    - const cardClass = "inner-page-card"
+                    section
+                        +title('أخبار تهمك', '/writers-details.html', false)
+                        - for (let i = 0; i < 4; i++)
+                            include include/components/side/small-card.pug
+
+                    //- Start Slider
+                    section
+                        include include/components/side/big-side-slider.pug
