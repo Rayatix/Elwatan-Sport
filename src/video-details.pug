@@ -18,16 +18,18 @@ block content
 
 
 
-                         .article-details-box.js-skeleton
-                                h2.article-details-box__title 
-                                    | بيراميدز يتمسك بالكرواتي يورتشيتش رغم السقوط أمام المصري
-                                .article-details-box__image-box
-                                    img(src= baseUrl + "https://placehold.co/837x491", alt="").article-details-box__image-box--image
-                                    
-                                .article-details-box__writer
-                                    h3.article-details-box__writer--name
-                                        span.article-details-box__time
-                                            | 11:32 م | الثلاثاء 03 ديسمبر 2024
+                        .article-details-box.js-skeleton
+                            h2.article-details-box__title 
+                                | بيراميدز يتمسك بالكرواتي يورتشيتش رغم السقوط أمام المصري
+                            .article-details-box__image-box
+                                img(src= baseUrl + "https://placehold.co/837x491" alt="").article-details-box__image-box--image
+
+                            .article-details-box__writer
+                                h3.article-details-box__writer--name
+                                    span.article-details-box__time
+                                        | 11:32 م | الثلاثاء 03 ديسمبر 2024
+
+                                include include/components/layout/social-media.pug
 
 
 
@@ -42,17 +44,17 @@ block content
                         .big-video-card-container
                             - for (let i = 0; i < 3; i++)
                                 include include/components/cards/video-big-card.pug
-                        
-                
+
+
                 //- Start Aside
                 div
                     div.side-banner.js-skeleton
                         img(src= baseUrl + 'https://placehold.co/304x608' alt="side banner")
-                    
+
                     //- Live Banner
                     section 
                         include include/components/side/live-banner.pug
-                    
+
 
                     //- Start Side Videos
                     section

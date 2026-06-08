@@ -1,125 +1,134 @@
 .article-details-box {
+  margin-bottom: 12px;
+
+  &__title {
+    @include text-size(1.5rem, 1.875rem, 700, sport-bold);
+    margin-bottom: 24px;
+    color: var(--text-black);
+  }
+
+  &__image-box {
+    position: relative;
+    overflow: hidden;
+    border-radius: 5px;
     margin-bottom: 12px;
 
-    &__title {
-        @include text-size(1.5rem, 1.875rem, 700, sport-bold);
-        margin-bottom: 24px;
+    &--image {
+      object-fit: cover;
+      width: 100%;
+      max-height: 500px;
     }
-    
-    &__image-box {
-        position: relative;
-        overflow: hidden;
-        border-radius: 5px;
-        margin-bottom: 12px;
-        
-        &--image {
-            object-fit: cover;
-            max-height: 500px;
-        }
-        
-        &--title {
-            @include text-size(1rem, 1.875rem, 400, sport-regular);
-            position: absolute;
-            bottom: 0;
-            background-color: rgba(1, 48, 21, 0.8);
-            width: 100%;
-            padding: 4.5px;
-            text-align: center;
-            color: var(--text-white);
-        }
+
+    &--title {
+      @include text-size(1rem, 1.875rem, 400, sport-regular);
+      position: absolute;
+      bottom: 0;
+      background-color: rgba(1, 48, 21, 0.8);
+      width: 100%;
+      padding: 4.5px;
+      text-align: center;
+      color: var(--text-white);
     }
-    
-    &__time {
-        @include text-size(0.75rem, 1.875rem, 300, sport-regular);
+  }
+
+  &__time {
+    @include text-size(0.75rem, 1.875rem, 300, sport-regular);
+    color: var(--text-orange);
+  }
+
+  &__writer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &--name {
+      @include text-size(1rem, 1.875rem, 400, sport-regular);
+      color: var(--text-dark-gray);
+
+      span {
         color: var(--text-orange);
+        margin-left: 3px;
+      }
     }
-    
-    &__writer {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-
-        &--name {
-            @include text-size(1rem, 1.875rem, 400, sport-regular);
-            color: var(--text-dark-gray);
-
-            span {
-                color: var(--text-orange);
-                margin-left: 3px;
-            }
-        }
-    }
+  }
 }
 
 .article-content {
-    border-bottom: 1px solid #d9d9d9;
+  border-bottom: 1px solid #d9d9d9;
+  margin-bottom: 24px;
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @include text-size(1.5rem, 2rem, 700, sport-bold);
+    color: var(--dark-orange);
+    margin-bottom: 24px;
+  }
+
+  p,
+  a,
+  article {
+    @include text-size(1.25rem, 1.875rem, 300, sport-regular);
+    margin-bottom: 24px;
+    color: var(--text-dark-gray);
+
+    @include xs {
+      @include text-size(1.125rem, 1.75rem, 300, sport-regular);
+    }
+  }
+
+  a {
+    text-decoration: underline;
+  }
+
+  img {
+    max-height: 500px;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -o-border-radius: 5px;
+    -ms-border-radius: 5px;
+    margin-bottom: 24px;
+    object-fit: cover;
+  }
+
+  ul {
+    list-style: disc;
+  }
+
+  ul,
+  ol {
+    padding-right: 24px;
+    position: relative;
     margin-bottom: 24px;
 
-
-    h1, h2, h3, h4, h5, h6 {
-        @include text-size(1.5rem, 2rem, 700, sport-bold);
-        color: var(--dark-orange);
-        margin-bottom: 24px;
+    @include xs {
+      padding-right: 12px;
     }
 
-    p, a, article {
-        @include text-size(1.25rem, 1.875rem, 300, sport-regular);
-        margin-bottom: 24px;
-        color: var(--text-dark-gray);
-        
-        @include xs {
-            @include text-size(1.125rem, 1.75rem, 300, sport-regular);
-        }
+    @include sm {
+      padding-right: 12px;
     }
 
-    a {
-        text-decoration: underline;
+    li {
+      margin-bottom: 16px;
+      margin-right: 24px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
     }
 
-    img {
-        max-height: 500px;
-        border-radius: 5px;
-        -webkit-border-radius: 5px;
-        -moz-border-radius: 5px;
-        -o-border-radius: 5px;
-        -ms-border-radius: 5px;
-        margin-bottom: 24px;
-        object-fit: cover;
+    &::before {
+      content: "";
+      border: 2px solid var(--border-active);
+      display: block;
+      position: absolute;
+      right: 0;
+      height: 100%;
     }
-
-    ul {
-        list-style: disc;
-    }
-    
-    ul, ol {
-        padding-right: 24px;
-        position: relative;
-        margin-bottom: 24px;
-        
-        @include xs {
-            padding-right: 12px;
-        }
-        
-        @include sm {
-            padding-right: 12px;
-        }
-        
-        li {
-            margin-bottom: 16px;
-            margin-right: 24px;
-            
-            &:last-child {
-                margin-bottom: 0;
-            }
-        }
-
-        &::before {
-            content: "";
-            border: 2px solid var(--border-active);
-            display: block;
-            position: absolute;
-            right: 0;
-            height: 100%;
-        }
-    }
+  }
 }

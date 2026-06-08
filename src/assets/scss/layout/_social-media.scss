@@ -1,23 +1,44 @@
 .social-media {
-    display: flex;
-    gap: 12px;
-    flex-shrink: 0;
+  display: flex;
+  gap: 12px;
+  flex-shrink: 0;
 
-    &__link {
-        width: 35px;
-        height: 35px;
-        color: var(--white);
-        background-color: #B9550D;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        @include text-size(20px, normal, unset, unset);
-        
-        @include xs {
-            width: 30px;
-            height: 30px;
-            @include text-size(14px, normal, unset, unset);
-        }
+  &__link {
+    width: 35px;
+    height: 35px;
+    color: var(--white);
+    background-color: #b9550d;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.25s ease-in-out;
+    -webkit-transition: all 0.25s ease-in-out;
+    -moz-transition: all 0.25s ease-in-out;
+    -o-transition: all 0.25s ease-in-out;
+    -ms-transition: all 0.25s ease-in-out;
+    @include text-size(20px, normal, unset, unset);
+
+    @include xs {
+      width: 30px;
+      height: 30px;
+      @include text-size(14px, normal, unset, unset);
     }
+
+    &--share:hover {
+      background-color: var(--share-icon);
+    }
+
+    &--facebook:hover {
+      background-color: var(--facebook-icon);
+    }
+
+    &--whatsapp:hover {
+      background-color: var(--whatsapp-icon);
+    }
+
+    &--twitter:hover {
+      background-color: var(--share-icon);
+    }
+  }
 }
