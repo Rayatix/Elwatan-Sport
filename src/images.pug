@@ -1,0 +1,37 @@
+extends include/layout
+include include/components/title.pug
+
+
+
+block content
+    include include/components/sliders/match-slider.pug
+
+    section.inner-split
+        .container
+            .news-container
+                //- Images Section
+                section.section-content
+                    +title('صــــــــــــور', '/writers-details.html', false)
+                    .big-video-card-container.big-image-card-container
+                        - for (let i = 0; i < 8; i++)
+                            include include/components/cards/video-big-card.pug
+                    .js-skeleton
+                        button.load-button(type="button")
+                            | تحميل المزيد
+
+
+                //- Start Aside
+                div
+                    div.side-banner.js-skeleton
+                        img(src= baseUrl + 'https://placehold.co/304x608' alt="side banner")
+
+                    //- Live Banner
+                    section 
+                        include include/components/side/live-banner.pug
+
+
+                    //- Start Side Videos
+                    section
+                        +title('البومات أكثر مشاهدة', '/images-details.html', false)
+                        - for (let i = 0; i < 4; i++)
+                            include include/components/cards/extra-small-video-card.pug
