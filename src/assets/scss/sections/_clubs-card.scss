@@ -1,0 +1,61 @@
+.club-cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  margin-bottom: 24px;
+
+  @include xs {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  @include sm {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @include md {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @include lg {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    padding: 24px;
+    gap: 24px;
+    @include border-card;
+
+    @include xs {
+      padding: 12px;
+      gap: 12px;
+    }
+  }
+
+  &__image {
+    aspect-ratio: 1;
+    width: 100px;
+    height: 100px;
+    flex-shrink: 0;
+  }
+
+  &__title {
+    @include text-size(0.875rem, 25px, 700, sport-bold);
+    color: var(--text-black);
+    text-align: center;
+    display: block;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+}

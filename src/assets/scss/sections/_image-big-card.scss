@@ -1,6 +1,10 @@
 .big-image-card-container {
   grid-template-columns: repeat(2, 1fr);
 
+  .video-big-card__image-box--icon {
+    display: none;
+  }
+
   @include xs {
     grid-template-columns: repeat(1, 1fr);
   }

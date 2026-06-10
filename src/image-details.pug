@@ -1,0 +1,77 @@
+extends include/layout
+include include/components/title.pug
+
+
+
+block content
+    include include/components/sliders/match-slider.pug
+
+    section.inner-split
+        .container
+            .news-container         
+                //- Related Articles
+                section
+
+                    //- Breadcrumb
+                    section
+                        include include/components/layout/breadcrumb.pug
+
+
+                        .article-details-box.js-skeleton
+                            h2.article-details-box__title 
+                                | بيراميدز يتمسك بالكرواتي يورتشيتش رغم السقوط أمام المصري
+
+                            .article-details-box__writer.article-details-box__image-details
+                                h3.article-details-box__writer--name
+                                    span.article-details-box__time
+                                        | 11:32 م | الثلاثاء 03 ديسمبر 2024
+                                include include/components/layout/social-media.pug
+
+                            .article-details-box__image-box.article-details-box__image-details-slider
+                                .swiper.image-details-slider(dir="rtl")
+                                    .swiper-wrapper
+                                        - for (let i = 0; i < 8; i++)
+                                            .swiper-slide
+                                                img(src= baseUrl + "https://placehold.co/837x491" alt="").article-details-box__image-box--image
+
+                                    .slider-controller
+                                        .swiper-button-prev
+                                            i.fa-solid.fa-chevron-right
+
+                                        .swiper-pagination
+
+                                        .swiper-button-next
+                                            i.fa-solid.fa-chevron-left
+
+
+
+                    //- Video Details
+                    section
+
+
+
+                    //- Videos
+                    section
+                        +title('يمكنك مشاهدة أيضا', '/writers-details.html', false)
+                        //- include include/components/sliders/image-details-slider.pug
+
+                        //- .big-video-card-container
+                        //-     - for (let i = 0; i < 3; i++)
+                        //-         include include/components/cards/video-big-card.pug
+
+
+                //- Start Aside
+                div
+                    div.side-banner.js-skeleton
+                        img(src= baseUrl + 'https://placehold.co/304x608' alt="side banner")
+
+                    //- Live Banner
+                    section 
+                        include include/components/side/live-banner.pug
+
+
+                    //- Start Side Videos
+                    section
+                        +title('فيديوهات أكثر مشاهدة', '/writers-details.html', false)
+                        - for (let i = 0; i < 4; i++)
+                            include include/components/cards/extra-small-video-card.pug

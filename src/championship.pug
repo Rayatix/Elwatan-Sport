@@ -1,0 +1,46 @@
+extends include/layout
+include include/components/title.pug
+include include/components/sub-title.pug
+
+
+
+block content
+    include include/components/sliders/match-slider.pug
+
+    section.inner-split
+        .container
+            .news-container         
+                section
+                    //- Leagues And Tournaments
+                    section
+                        +title('دوريات وبطولات', '/writers-details.html', false)
+                        +subTitle('مسابقات محلية')
+                        include include/components/cards/clubs-card.pug
+
+                    //- Continental Competitions
+                    section
+                        +subTitle('مسابقات قارية')
+                        include include/components/cards/clubs-card.pug
+
+                    //- International Competitions
+                    section
+                        +subTitle('مسابقات عالمية')
+                        include include/components/cards/clubs-card.pug
+
+
+
+                //- Start Aside
+                div
+                    div.side-banner.js-skeleton
+                        img(src= baseUrl + 'https://placehold.co/304x608' alt="side banner")
+
+                    //- Live Banner
+                    section 
+                        include include/components/side/live-banner.pug
+
+
+                    //- Start Side Videos
+                    section
+                        +title('فيديوهات أكثر مشاهدة', '/writers-details.html', false)
+                        - for (let i = 0; i < 4; i++)
+                            include include/components/cards/extra-small-video-card.pug
