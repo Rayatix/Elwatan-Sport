@@ -1,0 +1,48 @@
+.club-details-card-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+}
+
+.club-details {
+    background-color:  #fafafa;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -o-border-radius: 5px;
+    -ms-border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 8px;
+    padding: 24px;
+    
+    
+
+    &__image {
+        aspect-ratio: 0.58;
+        min-width: 50px;
+        flex-shrink: 0;
+    }
+
+    &__title {
+        @include text-size(1.125rem, 2rem, 700, sport-bold);
+        color: var(--text-orange);
+        display: block;
+        display: -webkit-box;
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+    
+    &__number {
+        @include text-size(.75rem, 1.5rem, 300, sport-regular);
+        color: var(--text-gray);
+        display: block;
+        display: -webkit-box;
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+}
