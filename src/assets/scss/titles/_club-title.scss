@@ -5,22 +5,54 @@
     display: flex;
     align-items: center;
     margin-bottom: 36px;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -o-border-radius: 5px;
+    -ms-border-radius: 5px;
+    
+    @include xs {
+        min-height: 85px;
+    }
+    
+    @include sm {
+        min-height: 85px;
+    }
 
     &__box {
         display: flex;
         justify-content: space-between;
         align-items: center;
         flex: 1;
+
+        @include xs {
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            padding: 12px;
+            gap: 6px;
+        }
     }
 
     &__club-content {
         display: flex;
         align-items: center;
         gap: 12px;
+       
+        img {
+            aspect-ratio: 1;
+
+            @include xs {
+                width: 40px;
+            }
+        }
     }
 
     &__title {
         @include text-size(1rem, 1.25rem, 700, "sport-bold");
+        
+        @include xs {
+            font-size: 0.75rem;
+        }
 
         &::after {
             content: "";
@@ -32,6 +64,12 @@
         display: flex;
         gap: 12px;
         align-items: center;
+
+        i {
+            @include xs {
+                font-size: 0.75rem;
+            }
+        }
     }
 
     &__icon {
@@ -43,5 +81,10 @@
         -o-border-radius: 5px;
         -ms-border-radius: 5px;
         flex-shrink: 0;
+        
+        @include xs {
+            width: 25px;
+            height: 25px;
+        }
     }
 }
