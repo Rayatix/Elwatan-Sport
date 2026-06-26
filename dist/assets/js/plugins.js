@@ -184,5 +184,3 @@ function closeMenu() {
   sideMenu.classList.remove("open");
   overlay.classList.remove("show");
 }
-
-//

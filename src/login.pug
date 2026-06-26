@@ -1,0 +1,27 @@
+extends include/layout
+include include/components/titles/title.pug
+include include/components/titles/club-title.pug
+
+
+
+block content
+    section.login.container
+        .login__right-side
+            .tabs
+                button.tab.active(data-tab="description") Description
+                button.tab(data-tab="howto") How to Use
+                button.tab(data-tab="shipping") Shipping and Returns
+
+            #description.tab-content.active
+                p This is the description of the product.
+
+            #howto.tab-content
+                p Here's how to use the product effectively.
+
+            #shipping.tab-content
+                p Details about shipping and returns go here.
+
+
+        .login__left-side
+            img(src= baseUrl + "https://placehold.co/675x670", alt="").login__left-side--image
+

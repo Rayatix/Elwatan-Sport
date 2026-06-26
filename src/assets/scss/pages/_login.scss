@@ -1,0 +1,62 @@
+.login {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    margin-bottom: 36px;
+
+    &__left-side {
+        &--image {
+            object-fit: cover;
+            aspect-ratio: 1;
+            border-radius: 20px;
+            -webkit-border-radius: 20px;
+            -moz-border-radius: 20px;
+            -o-border-radius: 20px;
+            -ms-border-radius: 20px;
+        }
+    }
+}
+
+
+
+// 
+.tabs {
+    display: flex;
+    border-bottom: 1px solid #ccc;
+
+    .tab {
+        padding: 10px 20px;
+        margin-right: 20px;
+        background: none;
+        border: none;
+        outline: none;
+        color: #8EA9A8;
+        font-size: 16px;
+        position: relative;
+        cursor: pointer;
+        transition: color 0.3s;
+
+        &.active {
+            color: #000;
+
+            &::after {
+                content: "";
+                position: absolute;
+                bottom: -1px;
+                left: 0;
+                right: 0;
+                height: 2px;
+                background-color: #000;
+            }
+        }
+    }
+}
+
+.tab-content {
+    display: none;
+    padding: 20px 0;
+
+    &.active {
+        display: block;
+    }
+}
