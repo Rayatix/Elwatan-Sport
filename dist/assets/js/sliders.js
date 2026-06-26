@@ -297,6 +297,7 @@ var readMoreSlider = new Swiper(".read-more-slide", {
 // Image Details Slider With Pagination
 var imageDetails = new Swiper(".image-details-slider", {
   rtl: true,
+  spaceBetween: 24,
   pagination: {
     el: ".swiper-pagination",
     type: "fraction",
@@ -357,6 +358,65 @@ var imageSlider = new Swiper(".image-slider-slide", {
     },
     1199.98: {
       slidesPerView: 3.2,
+    },
+  },
+});
+
+
+// Watch More Slider For Both Pages (video-details and image details)
+var readMoreSlider = new Swiper(".watch-more", {
+  slidesPerView: 3,
+  spaceBetween: 24,
+  freeMode: true,
+  loop: true,
+  rtl: true,
+
+  on: {
+    init: function () {
+      const el = this.el;
+
+      el.addEventListener("mouseenter", () => {
+        this.autoplay.stop();
+      });
+
+      el.addEventListener("mouseleave", () => {
+        this.autoplay.start();
+      });
+    },
+  },
+
+  autoplay: {
+    delay: 2500,
+    disableOnInteraction: false,
+  },
+
+  lazy: {
+    loadPrevNext: true,
+    loadOnTransitionStart: true,
+  },
+
+  breakpoints: {
+    0: {
+      slidesPerView: 1.2,
+      spaceBetween: 12,
+    },
+    300: {
+      slidesPerView: 1.2,
+      spaceBetween: 12,
+    },
+    575.98: {
+      slidesPerView: 1.8,
+      spaceBetween: 12,
+    },
+    767.98: {
+      slidesPerView: 2.5,
+      spaceBetween: 24,
+    },
+    991.98: {
+      slidesPerView: 2.5,
+    },
+    1199.98: {
+      slidesPerView: 3,
     },
   },
 });

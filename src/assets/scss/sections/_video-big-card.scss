@@ -37,21 +37,6 @@
     display: flex;
   }
 
-  // @include xs {
-  //     grid-template-columns: repeat(2, minmax(140px, 1fr));
-  // }
-
-  // @include sm {
-  //     grid-template-columns: repeat(2, minmax(100px, 1fr));
-  // }
-  // @include xs {
-  //     grid-template-columns: repeat(2, 1fr);
-  // }
-
-  // @include sm {
-  //     grid-template-columns: repeat(2, 1fr);
-  // }
-
   &__image-box {
     position: relative;
 

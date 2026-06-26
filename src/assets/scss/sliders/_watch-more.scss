@@ -1,0 +1,21 @@
+.watch-more {
+    overflow: hidden;
+
+    @include xs {
+        margin-bottom: 24px;
+    }
+    
+    @include sm {
+        margin-bottom: 24px;
+    }
+    
+    @include md {
+        margin-bottom: 24px;
+    }
+
+    &__image {
+        .video-big-card__image-box--icon {
+            display: none;
+        }
+    }
+}

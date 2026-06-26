@@ -44,15 +44,15 @@ block content
                                             i.fa-solid.fa-chevron-left
 
 
-
-                    //- Video Details
-                    section
-
-
-
-                    //- Videos
+                    //- Watch More Slider
                     section
                         +title('يمكنك مشاهدة أيضا', '/writers-details.html', false)
+                        .watch-more.watch-more__image.swiper(dir="rtl")
+                            .swiper-wrapper
+                                - for (let i = 0; i < 6; i++)
+                                    .swiper-slide
+                                        include include/components/cards/video-big-card.pug
+
                         //- include include/components/sliders/image-details-slider.pug
 
                         //- .big-video-card-container
