@@ -154,11 +154,57 @@
 
     }
     
+    &__redirect-link {
+        @include text-size(1.125rem, null, 700, "sport-bold");
+        color: #949494;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        flex-direction: row;
+        gap: 36px;
+        margin-bottom: 120px;
+        transition: all 0.25s ease-in-out;
+        -webkit-transition: all 0.25s ease-in-out;
+        -moz-transition: all 0.25s ease-in-out;
+        -o-transition: all 0.25s ease-in-out;
+        -ms-transition: all 0.25s ease-in-out;
+
+        @include xs {
+            margin-bottom: 48px;
+        }
+        
+        @include sm {
+            margin-bottom: 96px;
+        }
+        
+        @include md {
+            margin-bottom: 48px;
+        }
+
+        &:hover {
+            color: var(--text-orange);
+        }
+    }
+
     &__remember {
         display: flex;
         justify-content: space-between;
         align-items: center;
         gap: 8px;
+    }
+
+    &__main-data {
+        margin-bottom: 8px;
+
+        &--title {
+            @include text-size(1.5625rem, null, 700, "sport-bold");
+            margin-bottom: 8px;
+        }
+        
+        &--brief {
+            @include text-size(1rem, 1.5rem, 700, "sport-bold");
+            color: #949494;
+        }
     }
 
     &__forgot-password {
