@@ -168,6 +168,34 @@
             margin-right: 6px;
         }
     }
+
+
+
+
+
+    &__password {
+        position: relative;
+    }
+
+    &__toggle-password {
+        position: absolute;
+        top: 50%;
+        left: 24px;
+        transform: translateY(-50%);
+        border: none;
+        background: transparent;
+        cursor: pointer;
+        color: #888;
+        padding: 0;
+
+        &:hover {
+            color: #000;
+        }
+    }
+
+    &__input {
+        padding-left: 55px;
+    }
 }
 
 
@@ -177,19 +205,8 @@
     width: 300px;
 }
 
-.form-group {
-    margin-bottom: 10px;
-}
-
-// .btn {
-//     background: #1c94ff;
-//     padding: 4px 8px;
-//     border: none;
-//     box-shadow: 2px 1px 1px #d3d3d3;
-//     color: #fff;
-//     outline: none;
-//     font-size: 17px;
-//     cursor: pointer;
+// .form-group {
+//     margin-bottom: 10px;
 // }
 
 label {
@@ -198,7 +215,7 @@ label {
 }
 
 .has-success .form-control {
-    border-bottom: 2px solid #168b3f;
+    border-bottom: 2px solid #0b6b34;
 }
 
 .has-danger .form-control {

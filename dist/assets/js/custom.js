@@ -124,13 +124,65 @@ window.addEventListener("DOMContentLoaded", () => {
 
 
 // For Form Validation
-window.onload = function () {
-   var form = document.getElementById("form1");
-   var pristine = new Pristine(form);
-   form.addEventListener('submit', function (e) {
-      e.preventDefault();
-      var valid = pristine.validate();
-      //alert('Form is valid: ' + valid);
+// window.onload = function () {
+//    var form = document.getElementById("form1");
+//    var pristine = new Pristine(form);
+//    form.addEventListener('submit', function (e) {
+//       e.preventDefault();
+//       var valid = pristine.validate();
+//       //alert('Form is valid: ' + valid);
 
-   });
+//    });
+// };
+window.onload = function () {
+    const forms = document.querySelectorAll(".login__form");
+    forms.forEach(form => {
+        const pristine = new Pristine(form);
+        form.addEventListener("submit", function (e) {
+            e.preventDefault();
+            const valid = pristine.validate();
+            if (valid) {
+                console.log("Form is valid");
+                // form.submit();
+            }
+        });
+    });
 };
+
+
+// Toggle Password
+// const togglePassword = document.querySelector(".login__toggle-password");
+// const passwordInput = document.getElementById("password");
+// const icon = togglePassword.querySelector("i");
+
+// togglePassword.addEventListener("click", () => {
+
+//     const isVisible = passwordInput.type === "text";
+
+//     passwordInput.type = isVisible ? "password" : "text";
+
+//     icon.classList.toggle("fa-eye");
+//     icon.classList.toggle("fa-eye-slash");
+
+// });
+const toggleButtons = document.querySelectorAll(".login__toggle-password");
+
+toggleButtons.forEach(button => {
+
+    button.addEventListener("click", () => {
+
+        // البحث عن حقل كلمة المرور داخل نفس الـ field
+        const field = button.closest(".login__password");
+        const passwordInput = field.querySelector(".login__input");
+        const icon = button.querySelector("i");
+
+        const isVisible = passwordInput.type === "text";
+
+        passwordInput.type = isVisible ? "password" : "text";
+
+        icon.classList.toggle("fa-eye");
+        icon.classList.toggle("fa-eye-slash");
+
+    });
+
+});

@@ -20,7 +20,7 @@ block content
                     // Login Panel
                     #login.login__panel.login__panel--active
 
-                        form.login__form#form1(novalidate method="post")
+                        form.login__form(novalidate method="post")
 
                             .login__field.form-group
                                 label.login__label(for="email")
@@ -45,7 +45,6 @@ block content
                                 )
 
                             .login__options
-
                                 .login__remember
                                     input.login__checkbox(
                                         type="checkbox"
@@ -68,11 +67,86 @@ block content
 
                     // Register Panel
                     #register.login__panel
+                        form.login__form#form1(novalidate method="post")
+                            .login__field.form-group
+                                label.login__label(for="name")
+                                    | الاسم
 
-                        h2 إنشاء حساب جديد
+                                input.login__input.form-control(
+                                    type="name"
+                                    name="name"
+                                    required
+                                    data-pristine-required-message="من فضلك أدخل الاسم"
+                                )
 
-                        p
-                            | هنا ضع فورم إنشاء الحساب.
+                            .login__field.form-group
+                                label.login__label(for="email")
+                                    | الايميل
+
+                                input.login__input.form-control(
+                                    type="email"
+                                    name="email"
+                                    required
+                                    data-pristine-required-message="من فضلك أدخل الايميل"
+                                )
+                            
+                            .login__field.form-group
+                                label.login__label(for="password")
+                                    | الرقم السري
+
+                                .login__password
+                                    input.login__input.form-control(
+                                        type="password"
+                                        id="password"
+                                        name="password"
+                                        required
+                                        data-pristine-required-message="من فضلك أدخل الرقم السري"
+                                    )
+
+                                    button.login__toggle-password(
+                                        type="button"
+                                        aria-label="إظهار كلمة المرور"
+                                    )
+                                        i.fa-regular.fa-eye-slash
+
+                            .login__field.form-group
+                                label.login__label(for="password")
+                                    | اعادة الرقم السري
+
+                                .login__password
+                                    input.login__input.form-control(
+                                        type="password"
+                                        id="password" 
+                                        name="password"
+                                        required
+                                        data-pristine-required-message="من فضلك اعد ادخال الرقم السري"
+                                    )
+
+                                    button.login__toggle-password(
+                                        type="button"
+                                        aria-label="إظهار كلمة المرور"
+                                    )
+                                        i.fa-regular.fa-eye-slash
+                            .form-group
+                                .login__options
+                                    .login__remember
+                                        input.login__checkbox(
+                                            type="checkbox"
+                                            id="remember"
+                                            required 
+                                            data-pristine-required-message="عليك الموافقة"
+                                        )
+
+                                        label.login__checkbox-label(for="remember")
+                                            | أوافق  على السياسات والخصوصية
+
+
+                            
+                            
+                            
+
+                            button.login__submit-button(type="submit")
+                                | تسجيل الدخول
 
                         p.login__redirect
                             | لديك حساب بالفعل؟
