@@ -5,23 +5,87 @@ include include/components/titles/club-title.pug
 
 
 block content
-    section.login.container
-        .login__right-side
-            .tabs
-                button.tab.active(data-tab="description") Description
-                button.tab(data-tab="howto") How to Use
-                button.tab(data-tab="shipping") Shipping and Returns
+    section.login
+            .login__container.container
 
-            #description.tab-content.active
-                p This is the description of the product.
+                .login__content
 
-            #howto.tab-content
-                p Here's how to use the product effectively.
+                    .login__tabs
+                        button.login__tab.login__tab--active(data-tab="login")
+                            | تسجيل الدخول
 
-            #shipping.tab-content
-                p Details about shipping and returns go here.
+                        button.login__tab(data-tab="register")
+                            | إنشاء حساب جديد
 
+                    // Login Panel
+                    #login.login__panel.login__panel--active
 
-        .login__left-side
-            img(src= baseUrl + "https://placehold.co/675x670", alt="").login__left-side--image
+                        form.login__form#form1(novalidate method="post")
 
+                            .login__field.form-group
+                                label.login__label(for="email")
+                                    | البريد الإلكتروني
+
+                                input.login__input.form-control(
+                                    type="email"
+                                    name="email"
+                                    required
+                                    data-pristine-required-message="من فضلك أدخل البريد الإلكتروني"
+                                )
+
+                            .login__field.form-group
+                                label.login__label(for="password")
+                                    | كلمة المرور
+
+                                input.login__input.form-control(
+                                    type="password"
+                                    name="password"
+                                    required
+                                    data-pristine-required-message="من فضلك أدخل كلمة المرور"
+                                )
+
+                            .login__options
+
+                                .login__remember
+                                    input.login__checkbox(
+                                        type="checkbox"
+                                        id="remember"
+                                    )
+
+                                    label.login__checkbox-label(for="remember")
+                                        | تذكرني
+
+                                a.login__forgot-password(href="#")
+                                    | نسيت كلمة المرور؟
+
+                            button.login__submit-button(type="submit")
+                                | تسجيل الدخول
+
+                        p.login__redirect
+                            | ليس لديك حساب؟
+                            a#goToRegister(href="#")
+                                | إنشاء حساب
+
+                    // Register Panel
+                    #register.login__panel
+
+                        h2 إنشاء حساب جديد
+
+                        p
+                            | هنا ضع فورم إنشاء الحساب.
+
+                        p.login__redirect
+                            | لديك حساب بالفعل؟
+                            a#goToLogin(href="#")
+                                | تسجيل الدخول
+
+                .login__media
+                    img.login__image(
+                        src=baseUrl + "https://placehold.co/675x670"
+                        alt=""
+                    )
+                    .login__data
+                        h3 
+                            | اهلا بكم في الوطن سبورت
+                        p 
+                            | البوابة الرياضية الأوسع انتشارا في مصر. تقدم كل جديد في مختلف الألعاب الفردية  والجماعية لحظة بلحظة، ومواعيد الدوريات والمباريات الكبرى ونتائجها  وتقييم ...

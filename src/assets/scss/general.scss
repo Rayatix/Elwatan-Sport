@@ -32,6 +32,7 @@
   --facebook-icon: #3b5998;
   --whatsapp-icon: #25d366;
   --twitter-icon: #1da1f2;
+  --label-color: #a6ada9;
 }
 
 @mixin text-size($size, $line-height, $weight: null, $family: null) {
@@ -112,6 +113,11 @@ html {
 body {
   font-family: sport-regular, sans-serif;
   overflow-x: hidden;
+}
+
+
+[type='checkbox']:checked, [type='radio']:checked {
+  background-color: var(--orange) !important;
 }
 
 .container {

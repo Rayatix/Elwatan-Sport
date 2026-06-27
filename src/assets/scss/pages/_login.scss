@@ -1,62 +1,234 @@
 .login {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 24px;
     margin-bottom: 36px;
 
-    &__left-side {
-        &--image {
-            object-fit: cover;
-            aspect-ratio: 1;
-            border-radius: 20px;
-            -webkit-border-radius: 20px;
-            -moz-border-radius: 20px;
-            -o-border-radius: 20px;
-            -ms-border-radius: 20px;
+    &__container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 85px;
+    }
+
+    &__image {
+        width: 100%;
+        aspect-ratio: 1;
+        object-fit: cover;
+        border-radius: 20px;
+    }
+
+    &__media {
+        position: relative;
+        overflow: hidden;
+    }
+
+    &__data {
+        position: absolute;
+        top: 36px;
+        text-align: center;
+        padding: 0 24px;
+
+        h3 {
+            margin-bottom: 24px;
+            @include text-size(1.875rem, null, 700, "sport-bold");
+            color: var(--text-white)
+        }
+        
+        p {
+            @include text-size(0.875rem, 1.5rem, 700, "sport-bold");
+            color: var(--text-white)
         }
     }
-}
 
+    &__tabs {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        background-color: #F2F2F2;
+        border-radius: 8px;
+        -webkit-border-radius: 8px;
+        -moz-border-radius: 8px;
+        -o-border-radius: 8px;
+        -ms-border-radius: 8px;
+        margin-bottom: 24px;
+        padding: 12px 0;
+    }
 
-
-// 
-.tabs {
-    display: flex;
-    border-bottom: 1px solid #ccc;
-
-    .tab {
-        padding: 10px 20px;
-        margin-right: 20px;
+    &__tab {
         background: none;
         border: none;
-        outline: none;
         color: #8EA9A8;
-        font-size: 16px;
-        position: relative;
         cursor: pointer;
-        transition: color 0.3s;
+        position: relative;
+        transition: color .3s;
+        border-radius: 8px;
+        -webkit-border-radius: 8px;
+        -moz-border-radius: 8px;
+        -o-border-radius: 8px;
+        -ms-border-radius: 8px;
+        padding: 8px 0;
+        @include text-size(0.875rem, null, 700, "sport-bold");
 
-        &.active {
-            color: #000;
+        &--active {
+            color: var(--text-white);
+            background-color: #0B6B34;
+        }
+    }
 
-            &::after {
-                content: "";
-                position: absolute;
-                bottom: -1px;
-                left: 0;
-                right: 0;
-                height: 2px;
-                background-color: #000;
-            }
+    &__panel {
+        display: none;
+        padding: 20px 0;
+
+        &--active {
+            display: block;
+        }
+    }
+
+    &__form {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+    }
+
+    &__label {
+        margin-bottom: 8px;
+        @include text-size(0.875rem, null, 700, "sport-bold");
+        color: var(--label-color);
+    }
+
+    &__input {
+        border-radius: 8px;
+        -webkit-border-radius: 8px;
+        -moz-border-radius: 8px;
+        -o-border-radius: 8px;
+        -ms-border-radius: 8px;
+        border: 1px solid #82AA93;
+        height: 48px;
+
+        &:focus {
+            border: 1px solid #82AA93 !important;
+        }
+    }
+
+    &__options {
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    &__checkbox {
+        width: 18px;
+        height: 18px;
+        border: 2px solid #313131 !important;
+    outline: none;
+
+    &:focus {
+        border: 2px solid #313131 !important;
+    }
+
+
+    }
+    
+    &__remember {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 8px;
+    }
+
+    &__forgot-password {
+        color: var(--text-orange);
+        @include text-size(.875rem, null, 700, "sport-bold");
+    }
+    
+    &__submit-button {
+        background-color: #0b6b34;
+        width: 100%;
+        color: var(--text-white);
+        border-radius: 8px;
+        -webkit-border-radius: 8px;
+        -moz-border-radius: 8px;
+        -ms-border-radius: 8px;
+        -o-border-radius: 8px;
+        height: 48px;
+        border: 1px solid #0b6b34;
+        @include text-size(.875rem, null, 700, "sport-bold");
+        transition: all ease-in-out 0.25s;
+        margin-bottom: 24px;
+
+        &:hover {
+            background-color: transparent;
+            border: 1px solid #0b6b34;
+            color: #0b6b34;
+        }
+    }
+    
+    &__redirect {
+        @include text-size(.875rem, null, 700, "sport-bold");
+        color: var(--text-black);
+        text-align: center;
+
+        a {
+            color: var(--text-orange);
+            margin-right: 6px;
         }
     }
 }
 
-.tab-content {
-    display: none;
-    padding: 20px 0;
 
-    &.active {
-        display: block;
-    }
+// Validation Form Style
+.form-container {
+    margin: 80px auto;
+    width: 300px;
+}
+
+.form-group {
+    margin-bottom: 10px;
+}
+
+// .btn {
+//     background: #1c94ff;
+//     padding: 4px 8px;
+//     border: none;
+//     box-shadow: 2px 1px 1px #d3d3d3;
+//     color: #fff;
+//     outline: none;
+//     font-size: 17px;
+//     cursor: pointer;
+// }
+
+label {
+    display: block;
+    margin-bottom: 2px;
+}
+
+.has-success .form-control {
+    border-bottom: 2px solid #168b3f;
+}
+
+.has-danger .form-control {
+    border-bottom: 2px solid var(--orange);
+}
+
+.form-group .text-help {
+    color: var(--orange);
+}
+
+.inline-label label{
+    display: inline;
+}
+
+.pristine-error {
+    display: table;
+    color: var(--text-orange);
+    margin-top: 3px;
+}
+
+
+
+// For Tabs Smooth Animation
+.login__panel {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.25s ease-in-out;
+}
+
+.login__panel--active {
+    display: block;
+    opacity: 1;
 }
