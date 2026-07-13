@@ -15,12 +15,7 @@ section.tabs.tabs--home-space(dir="rtl")
 
             .tabs-content
                 - for (let i = 0; i < 3; i++)
-                    a(href= baseUrl + "#")
-                        div
-                            img(src= baseUrl + "https://placehold.co/82x82" alt="")
-                        div
-                            span.section-name.section-name--small أخبار محلية
-                            h3 الصفقات مستمرة.. الوداد يضم البرازيلي بيدرينيو
+                    include small-card.pug
 
         .tabs__panel.active(data-index="1")
             .register-content
