@@ -4,20 +4,57 @@ mixin clubTitle(options)
     - var image = options.image || ''
     - var showIcon = options.showIcon !== false
     - var isWhite = options.isWhite || false
+    - var isLink = options.isLink !== false
     - var icon = options.icon || 'fa-arrow-right'
 
     .club-title(class=isWhite ? 'title--white' : '')
         .club-title__box
-            .club-title__club-content
+            .club-title__club-content.js-skeleton
                 if image
                     img.club-title__image(src=image, alt=text)
-                    h3(class='title-text club-title__title' + (isWhite ? ' title-text--white' : ''))
+
+                h3(class='title-text club-title__title' + (isWhite ? ' title-text--white' : ''))
+                    if isLink
                         a(href=url)= text
+                    else
+                        span= text
 
             if showIcon
-                .club-title__sub-title
+                .club-title__sub-title.js-skeleton
                     h3(class='title-text club-title__title' + (isWhite ? ' title-text--white' : ''))
-                        a(href=url)= text
+                        if isLink
+                            a(href=url)= text
+                        else
+                            span= text
+
+                    if isLink
+                        a.title-icon.club-title__icon(href=url)
+                            i.fas(class=icon)
+                    else
+                        span.title-icon.club-title__icon
+                            i.fas(class=icon)
+
+
+//- mixin clubTitle(options)
+//-     - var text = options.text || ''
+//-     - var url = options.url || '#'
+//-     - var image = options.image || ''
+//-     - var showIcon = options.showIcon !== false
+//-     - var isWhite = options.isWhite || false
+//-     - var icon = options.icon || 'fa-arrow-right'
+
+//-     .club-title(class=isWhite ? 'title--white' : '')
+//-         .club-title__box
+//-             .club-title__club-content
+//-                 if image
+//-                     img.club-title__image(src=image, alt=text)
+//-                     h3(class='title-text club-title__title' + (isWhite ? ' title-text--white' : ''))
+//-                         a(href=url)= text
+
+//-             if showIcon
+//-                 .club-title__sub-title
+//-                     h3(class='title-text club-title__title' + (isWhite ? ' title-text--white' : ''))
+//-                         a(href=url)= text
                         
-                    a.title-icon.club-title__icon(href=url)
-                        i.fas(class=icon)
+//-                     a.title-icon.club-title__icon(href=url)
+//-                         i.fas(class=icon)

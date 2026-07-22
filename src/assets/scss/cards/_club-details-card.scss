@@ -35,6 +35,11 @@
     -moz-border-radius: 5px 5px 10px 10px;
     -o-border-radius: 5px 5px 10px 10px;
     -ms-border-radius: 5px 5px 10px 10px;
+    
+    &:hover {
+        border-bottom: 2px solid var(--primary);
+        transition: border-bottom 0.25s ease-in-out; 
+    }
 
     &__image {
         aspect-ratio: 1;

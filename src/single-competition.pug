@@ -1,0 +1,41 @@
+extends include/layout
+include include/components/titles/title.pug
+include include/components/titles/club-title.pug
+
+
+
+block content
+    include include/components/sliders/match-slider.pug
+
+    section.inner-split
+        .container
+            .news-container         
+                section
+                    //- Championship Details
+                    section
+                        +clubTitle({
+                            text: 'احصائيات الدوري الممتاز',
+                            image: baseUrl + 'https://placehold.co/60x60',
+                            isLink: false,
+                            showIcon: false
+                        })
+
+                        .club-details-card-container
+                            - for (let i = 0; i < 12; i++)
+                                include include/components/cards/club-details-card.pug
+
+                //- Start Aside
+                div
+                    div.side-banner.js-skeleton
+                        img(src= baseUrl + 'https://placehold.co/304x608' alt="side banner")
+
+                    //- Live Banner
+                    section 
+                        include include/components/side/live-banner.pug
+
+
+                    //- Start Side Videos
+                    section
+                        +title('فيديوهات أكثر مشاهدة', '/writers-details.html', false)
+                        - for (let i = 0; i < 4; i++)
+                            include include/components/cards/extra-small-video-card.pug
