@@ -1,0 +1,98 @@
+.club-details-sort-card-container {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 12px;
+    margin-bottom: 36px;
+    
+    @include xs {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    @include sm {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    @include md {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    @include lg {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.club-details-sort {
+    background-color:  #fafafa;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 4px;
+    padding: 12px 6px;
+    border-bottom: 2px solid var(--orange);
+    border-radius: 5px 5px 10px 10px;
+    -webkit-border-radius: 5px 5px 10px 10px;
+    -moz-border-radius: 5px 5px 10px 10px;
+    -o-border-radius: 5px 5px 10px 10px;
+    -ms-border-radius: 5px 5px 10px 10px;
+    
+    &:hover {
+        border-bottom: 2px solid var(--primary);
+        transition: border-bottom 0.25s ease-in-out; 
+    }
+
+    &__image {
+        aspect-ratio: 1;
+        min-width: 50px;
+        width: 50px;
+        flex-shrink: 0;
+        
+        @include sm {
+            min-width: 60px;
+            width: 60px;
+        }
+    }
+
+    &__title {
+        @include text-size(0.75rem, normal, 700, sport-bold);
+        color: var(--text-black);
+        display: block;
+        display: -webkit-box;
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-align: center;
+    }
+
+    &__sub-title {
+        @include text-size(0.75rem, normal, 500, sport-regular);
+        color: var(--text-black);
+        display: block;
+        display: -webkit-box;
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-align: center;
+    }
+    
+    &__number {
+        @include text-size(1rem, normal, 700, sport-bold);
+        color: var(--text-black);
+        display: block;
+        display: -webkit-box;
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 3px;
+        max-height: 25px;
+        overflow: hidden;
+        
+        span {
+            @include text-size(1rem, normal, 700, sport-bold);
+            color: var(--text-black);
+        }
+    }
+}

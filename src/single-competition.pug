@@ -1,6 +1,7 @@
 extends include/layout
 include include/components/titles/title.pug
 include include/components/titles/club-title.pug
+include include/components/cards/match-result-card.pug
 
 
 
@@ -11,7 +12,7 @@ block content
         .container
             .news-container         
                 section
-                    //- Championship Details
+                    //- Clubs Section
                     section
                         +clubTitle({
                             text: 'احصائيات الدوري الممتاز',
@@ -20,9 +21,31 @@ block content
                             showIcon: false
                         })
 
-                        .club-details-card-container
-                            - for (let i = 0; i < 12; i++)
-                                include include/components/cards/club-details-card.pug
+                        .club-details-sort-card-container
+                            - for (let i = 0; i < 6; i++)
+                                include include/components/cards/single-competition-card.pug
+                    
+                    //- News Section
+                    section
+                        +title('الاخبار', '/', true)
+
+                        .news-card-container
+                            - for (let i = 0; i < 3; i++)
+                                include include/components/cards/news-card.pug
+                        
+                    //- Status Section
+                    section
+                        +title('إحصائيات البطولة', '/', true)
+                        
+                        .status-section
+                            include include/components/cards/status-card.pug
+                            
+                            .status-section__result-card
+                                +matchResult('نتيجة المباراة', 15)
+                                +matchResult('نتيجة المباراة', 15)
+
+                            .status-section__player-card
+                        
 
                 //- Start Aside
                 div
