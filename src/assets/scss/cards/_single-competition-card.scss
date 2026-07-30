@@ -1,6 +1,6 @@
 .club-details-sort-card-container {
     display: grid;
-    grid-template-columns: repeat(6, 1fr);
+    grid-template-columns: repeat(9, 1fr);
     gap: 12px;
     margin-bottom: 36px;
     
@@ -93,6 +93,11 @@
         span {
             @include text-size(1rem, normal, 700, sport-bold);
             color: var(--text-black);
+            display: -webkit-box;
+            -webkit-line-clamp: 1;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            max-width: 50px;
         }
     }
 }

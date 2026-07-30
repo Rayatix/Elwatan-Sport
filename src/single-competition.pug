@@ -9,56 +9,67 @@ block content
     include include/components/sliders/match-slider.pug
 
     section.inner-split
-        .container
-            .news-container         
+        .container         
+            section
+                //- Clubs Section
                 section
-                    //- Clubs Section
-                    section
-                        +clubTitle({
-                            text: 'احصائيات الدوري الممتاز',
-                            image: baseUrl + 'https://placehold.co/60x60',
-                            isLink: false,
-                            showIcon: false
-                        })
+                    +clubTitle({
+                        text: 'احصائيات الدوري الممتاز',
+                        image: baseUrl + 'https://placehold.co/60x60',
+                        isLink: false,
+                        showIcon: false
+                    })
 
-                        .club-details-sort-card-container
-                            - for (let i = 0; i < 6; i++)
-                                include include/components/cards/single-competition-card.pug
+                    .club-details-sort-card-container
+                        - for (let i = 0; i < 9; i++)
+                            include include/components/cards/single-competition-card.pug
+                
+                //- News Section
+                section
+                    +title('الاخبار', '/', true)
+
+                    .news-card-container
+                        - for (let i = 0; i < 3; i++)
+                            include include/components/cards/news-card.pug
                     
-                    //- News Section
-                    section
-                        +title('الاخبار', '/', true)
-
-                        .news-card-container
-                            - for (let i = 0; i < 3; i++)
-                                include include/components/cards/news-card.pug
+                //- Status Section
+                section
+                    +title('إحصائيات البطولة', '/', true)
+                    
+                    .status-section
+                        .status-section__result-card
+                            +matchResult('المباريات', 15)
+                            +matchResult('الأهداف', 15)
                         
-                    //- Status Section
-                    section
-                        +title('إحصائيات البطولة', '/', true)
-                        
-                        .status-section
+                            //- - for (let i = 0; i < 3; i++)
+                        .status-section__player-card
                             include include/components/cards/status-card.pug
                             
-                            .status-section__result-card
-                                +matchResult('نتيجة المباراة', 15)
-                                +matchResult('نتيجة المباراة', 15)
+                            //- First Player Card
+                            +statusCard({
+                                title: 'الهداف',
+                                image: 'https://placehold.co/70x70',
+                                name: 'إمام عاشور',
+                                club: 'سيراميكا كليوباترا',
+                                number: '3510'
+                            })
 
-                            .status-section__player-card
-                        
+                            //- Second Player Card
+                            +statusCard({
+                                title: 'صانع الأهداف',
+                                image: 'https://placehold.co/70x70',
+                                name: 'أحمد حسام ميدو',
+                                club: 'الأهلي',
+                                number: '15'
+                            })
 
-                //- Start Aside
-                div
-                    div.side-banner.js-skeleton
-                        img(src= baseUrl + 'https://placehold.co/304x608' alt="side banner")
+                            //- Third Player Card
+                            +statusCard({
+                                title: 'مشاركات بالدقائق',
+                                image: 'https://placehold.co/70x70',
+                                name: 'إمام عاشور',
+                                club: 'سيراميكا كليوباترا',
+                                number: '3510'
+                            })
 
-                    //- Live Banner
-                    section 
-                        include include/components/side/live-banner.pug
-
-
-                    //- Start Side Videos
-                    section
-                        +title('فيديوهات أكثر مشاهدة', '/writers-details.html', false)
-                        - for (let i = 0; i < 4; i++)
-                            include include/components/cards/extra-small-video-card.pug
+                        .status-section__player-card

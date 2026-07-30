@@ -1,0 +1,128 @@
+.status-section {
+    &__result-card {
+       display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+        margin-bottom: 24px;
+
+        // @include xs {
+        //     display: block;
+        // }
+
+        // @include sm {
+        //     display: block;
+        // } 
+    }
+
+    &__player-card {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+
+        // @include xs {
+        //     display: block;
+        // }
+
+        // @include sm {
+        //     display: block;
+        // }
+    }
+}
+
+.match-result {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--white);
+    padding: 39px 24px;
+    border-radius: 6px;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    -ms-border-radius: 6px;
+    -o-border-radius: 6px;
+
+    &__title {
+        flex-shrink: 0;
+    }
+    
+    &__number {
+        flex-shrink: 0;
+    }
+}
+
+
+// Player Card
+
+.status-card {
+    border-radius: 6px;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    -o-border-radius: 6px;
+    -ms-border-radius: 6px;
+    background-color: var(--white);
+    padding: 12px 24px;
+
+    &__content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 12px;
+    }
+
+    &__title {
+        margin-bottom: 12px;
+        @include text-size(1.25rem, normal, 700, sport-bold);
+        color: var(--text-black);
+        margin-bottom: 12px;
+        display: -webkit-box;
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+
+    &__body {
+        display: flex;
+        align-items: center;
+        gap: 24px;
+
+        &--image {
+            max-width: 70px;
+            aspect-ratio: 1;
+            object-fit: cover;
+            border-radius: 10px;
+            -webkit-border-radius: 10px;
+            -moz-border-radius: 10px;
+            -ms-border-radius: 10px;
+            -o-border-radius: 10px;
+        }
+
+        &--name {
+            @include text-size(1.125rem, 1.5625rem, 700, sport-bold);
+            color: var(--text-black);
+            margin-bottom: 6px;
+            display: -webkit-box;
+            -webkit-line-clamp: 1;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+        
+        &--club {
+            @include text-size(0.875rem, 1.5625rem, 400, sport-regular);
+            color: var(--text-black);
+            display: -webkit-box;
+            -webkit-line-clamp: 1;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            max-width: 135px;
+        }
+    }
+    
+    &__number {
+        @include text-size(1.875rem, normal, 700, sport-bold);
+        color: var(--text-black);
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        max-width: 60px;
+    }
+}

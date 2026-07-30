@@ -1,14 +1,22 @@
-.status-card
-    h3.status-card__title
-        | الهداف
-    .status-card__body
-        .status-card__body--info
-            img.status-card__body--image(src= baseUrl + "https://placehold.co/75x75" alt="")
-            div
-                h3.status-card__body--name
-                    | إمام عاشور
-                p.status-card__body--club
-                    | سيراميكا كليوباترا    
-        .status-card__body--number
-            span
-                | 3510
+mixin statusCard(options)
+    - var title = options.title || ''
+    - var image = options.image || 'https://placehold.co/70x70'
+    - var name = options.name || ''
+    - var club = options.club || ''
+    - var number = options.number || ''
+
+    .status-card.js-skeleton
+        h3.status-card__title= title
+
+        .status-card__content
+            .status-card__body
+                img.status-card__body--image(
+                    src= baseUrl + image
+                    alt=name
+                )
+                div
+                    h3.status-card__body--name= name
+                    p.status-card__body--club= club
+
+            span.status-card__number
+                = number
