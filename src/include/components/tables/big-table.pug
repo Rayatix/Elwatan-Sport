@@ -1,0 +1,80 @@
+-
+    const standings = [
+        {
+            rank: 1,
+            team: "الأهلي",
+            logo: "https://placehold.co/45x45",
+            played: 20,
+            won: 20,
+            draw: 2,
+            lost: 0,
+            goalsFor: 42,
+            goalsAgainst: 15,
+            diff: 27,
+            points: 62
+        },
+        {
+            rank: 2,
+            team: "وادي دجلة",
+            logo: "https://placehold.co/45x45",
+            played: 20,
+            won: 20,
+            draw: 2,
+            lost: 0,
+            goalsFor: 42,
+            goalsAgainst: 15,
+            diff: 27,
+            points: 62
+        },
+        {
+            rank: 3,
+            team: "الزمالك",
+            logo: "https://placehold.co/45x45",
+            played: 20,
+            won: 20,
+            draw: 2,
+            lost: 0,
+            goalsFor: 42,
+            goalsAgainst: 15,
+            diff: 27,
+            points: 62
+        }
+    ]
+
+.table-standing
+    table.table-standing__table
+        thead
+            tr.table-standing__row
+                th.table-standing__head #
+                th.table-standing__head اسم الفريق
+                th.table-standing__head لعب
+                th.table-standing__head فاز
+                th.table-standing__head تعادل
+                th.table-standing__head خسر
+                th.table-standing__head له
+                th.table-standing__head عليه
+                th.table-standing__head الفارق
+                th.table-standing__head النقاط
+
+        tbody
+            each item in standings
+                tr.table-standing__row
+                    td.table-standing__cell #{item.rank}
+
+                    td.table-standing__cell
+                        .table-standing__team
+                            img.table-standing__logo(
+                                src=item.logo
+                                alt=item.team
+                            )
+
+                            span.table-standing__name #{item.team}
+
+                    td.table-standing__cell #{item.played}
+                    td.table-standing__cell #{item.won}
+                    td.table-standing__cell #{item.draw}
+                    td.table-standing__cell #{item.lost}
+                    td.table-standing__cell #{item.goalsFor}
+                    td.table-standing__cell #{item.goalsAgainst}
+                    td.table-standing__cell #{item.diff}
+                    td.table-standing__cell.table-standing__cell--points #{item.points}
