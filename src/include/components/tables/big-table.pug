@@ -1,45 +1,30 @@
 -
-    const standings = [
-        {
-            rank: 1,
-            team: "الأهلي",
-            logo: "https://placehold.co/45x45",
-            played: 20,
-            won: 20,
-            draw: 2,
-            lost: 0,
-            goalsFor: 42,
-            goalsAgainst: 15,
-            diff: 27,
-            points: 62
-        },
-        {
-            rank: 2,
-            team: "وادي دجلة",
-            logo: "https://placehold.co/45x45",
-            played: 20,
-            won: 20,
-            draw: 2,
-            lost: 0,
-            goalsFor: 42,
-            goalsAgainst: 15,
-            diff: 27,
-            points: 62
-        },
-        {
-            rank: 3,
-            team: "الزمالك",
-            logo: "https://placehold.co/45x45",
-            played: 20,
-            won: 20,
-            draw: 2,
-            lost: 0,
-            goalsFor: 42,
-            goalsAgainst: 15,
-            diff: 27,
-            points: 62
-        }
+    const teams = [
+        "الأهلي",
+        "وادي دجلة",
+        "الزمالك",
+        "بيراميدز",
+        "المصري",
+        "سيراميكا كليوباترا",
+        "الاتحاد السكندري",
+        "الإسماعيلي",
+        "فيوتشر",
+        "إنبي"
     ]
+
+    const standings = Array.from({ length: 10 }, (_, index) => ({
+        rank: index + 1,
+        team: teams[index],
+        logo: "https://placehold.co/45x45",
+        played: 20,
+        won: 20 - index,
+        draw: 2,
+        lost: index,
+        goalsFor: 42 - index,
+        goalsAgainst: 15 + index,
+        diff: 27 - index * 2,
+        points: 62 - index * 4
+    }))
 
 .table-standing
     table.table-standing__table
@@ -61,13 +46,12 @@
                 tr.table-standing__row
                     td.table-standing__cell #{item.rank}
 
-                    td.table-standing__cell
+                    td.table-standing__cell.table-standing__cell--team
                         .table-standing__team
                             img.table-standing__logo(
                                 src=item.logo
                                 alt=item.team
                             )
-
                             span.table-standing__name #{item.team}
 
                     td.table-standing__cell #{item.played}

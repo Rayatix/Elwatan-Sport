@@ -2,7 +2,7 @@
     width: 100%;
     overflow-x: auto;
     border-radius: 8px;
-    border: 1px solid #e6e6e6;
+    // border: 1px solid #e6e6e6;
     background: #fff;
 
     &__table {
@@ -22,6 +22,7 @@
 
         &:nth-child(2) {
             text-align: right;
+            width: 250px;
         }
     }
 
@@ -38,15 +39,18 @@
     }
 
     &__cell {
+        @include text-size(1rem, 1.8125rem, 700, sport-bold);
         padding: 14px 12px;
-        font-size: 14px;
         color: #222;
         text-align: center;
         white-space: nowrap;
 
         &--points {
             color: #d56d20;
-            font-weight: 700;
+        }
+
+        &--team {
+            width: 250px;
         }
     }
 
@@ -55,9 +59,12 @@
         align-items: center;
         justify-content: flex-start;
         gap: 10px;
-        min-width: 160px;
-        max-width: 160px;
+        // min-width: 160px;
+        // max-width: 160px;
+        // width: 250px;
     }
+    
+    
 
     &__logo {
         // width: 45px;
@@ -70,5 +77,29 @@
     &__name {
         font-weight: 500;
         color: #222;
+    }
+}
+
+
+
+// 
+.table-standing {
+    &__table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    &__table tbody {
+        display: block;
+        max-height: 480px;
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+
+    &__table thead,
+    &__table tbody tr {
+        display: table;
+        width: 100%;
+        table-layout: fixed;
     }
 }

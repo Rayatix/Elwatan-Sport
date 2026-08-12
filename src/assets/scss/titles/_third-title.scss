@@ -1,0 +1,14 @@
+.third-title {
+    @include text-size(1.5rem, 1.875rem, 700, sport-bold);
+    color: var(--text-black);
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    margin-bottom: 12px;
+    overflow: hidden;
+
+    span {
+        display: inline-block;
+    }
+}
+
