@@ -2,7 +2,6 @@
     width: 100%;
     overflow-x: auto;
     border-radius: 8px;
-    // border: 1px solid #e6e6e6;
     background: #fff;
 
     &__table {
@@ -59,28 +58,20 @@
         align-items: center;
         justify-content: flex-start;
         gap: 10px;
-        // min-width: 160px;
-        // max-width: 160px;
-        // width: 250px;
     }
-    
-    
 
     &__logo {
-        // width: 45px;
-        // height: 28px;
         object-fit: contain;
         flex-shrink: 0;
         aspect-ratio: 1;
     }
 
     &__name {
+        @include text-size(0.875rem, 1.8125rem, 600, sport-bold);
         font-weight: 500;
         color: #222;
     }
 }
-
-
 
 // 
 .table-standing {
