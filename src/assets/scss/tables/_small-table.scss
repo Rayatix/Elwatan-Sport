@@ -1,0 +1,118 @@
+.table-standing {
+    width: 100%;
+    overflow-x: auto;
+    border-radius: 8px;
+    background: #fff;
+
+    &__table {
+        width: 100%;
+        border-collapse: collapse;
+        min-width: 900px;
+    }
+
+    &__head {
+        padding: 14px 12px;
+        background: #005326;
+        color: #fff;
+        font-size: 14px;
+        font-weight: 600;
+        text-align: center;
+        white-space: nowrap;
+        border-radius: unset;
+        
+        @include xs {
+            padding: 6px 6px;
+        }
+
+        &:nth-child(2) {
+            text-align: right;
+            width: 250px;
+
+            @include xs {
+                width: 170px;
+            }
+        }
+    }
+
+    &__row {
+        transition: .2s ease;
+
+        &:not(:last-child) {
+            border-bottom: 1px solid #ececec;
+        }
+
+        &:hover {
+            background: #fafafa;
+        }
+    }
+
+    &__cell {
+        @include text-size(1rem, 1.8125rem, 700, sport-bold);
+        padding: 14px 12px;
+        color: #222;
+        text-align: center;
+        white-space: nowrap;
+        border-radius: unset;
+        
+        @include xs {
+            padding: 6px 6px;
+        }
+
+        &--points {
+            color: #d56d20;
+        }
+
+        &--team {
+            width: 250px;
+
+            @include xs {
+                width: 170px;
+            }
+        }
+    }
+
+    &__team {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 10px;
+    }
+
+    &__logo {
+        object-fit: contain;
+        flex-shrink: 0;
+        aspect-ratio: 1;
+
+        @include xs {
+            max-width: 25px;
+        }
+    }
+
+    &__name {
+        @include text-size(0.875rem, 1.8125rem, 600, sport-bold);
+        font-weight: 500;
+        color: #222;
+    }
+}
+
+// 
+.table-standing {
+    &__table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    &__table tbody {
+        display: block;
+        max-height: 480px;
+        overflow-y: auto;
+        overflow-x: auto;
+    }
+
+    &__table thead,
+    &__table tbody tr {
+        display: table;
+        width: 100%;
+        table-layout: fixed;
+    }
+}

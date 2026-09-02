@@ -1,0 +1,83 @@
+extends include/layout
+include include/components/titles/title.pug
+include include/components/titles/club-title.pug
+include include/components/cards/match-result-card.pug
+
+
+
+block content
+    include include/components/sliders/match-slider.pug
+
+    section.inner-split
+        .container         
+            section
+                //- Clubs Section
+                section
+                    +clubTitle({
+                        text: 'احصائيات الدوري الممتاز',
+                        image: baseUrl + 'https://placehold.co/60x60',
+                        isLink: false,
+                        showIcon: false
+                    })
+
+                    .club-details-sort-card-container
+                        - for (let i = 0; i < 9; i++)
+                            include include/components/cards/single-competition-card.pug
+                
+                //- News Section
+                section.content-box
+                    +title('الاخبار', '/', true)
+
+                    .news-card-container
+                        - for (let i = 0; i < 3; i++)
+                            include include/components/cards/news-card.pug
+
+                //- Start Table
+                section.content-box
+                    h3.third-title.js-skeleton
+                        span
+                            | جدول ترتيب الدوري المصري
+                    include include/components/tables/small-table.pug
+
+
+                //- Status Section
+                section.content-box
+                    +title('إحصائيات البطولة', '/', true)
+                    
+                    .status-section
+                        .status-section__result-card
+                            +matchResult('المباريات', 15)
+                            +matchResult('الأهداف', 15)
+                        
+                            //- - for (let i = 0; i < 3; i++)
+                        .status-section__player-card
+                            include include/components/cards/status-card.pug
+                            
+                            //- First Player Card
+                            +statusCard({
+                                title: 'الهداف',
+                                image: 'https://placehold.co/70x70',
+                                name: 'إمام عاشور',
+                                club: 'سيراميكا كليوباترا',
+                                number: '3510'
+                            })
+
+                            //- Second Player Card
+                            +statusCard({
+                                title: 'صانع الأهداف',
+                                image: 'https://placehold.co/70x70',
+                                name: 'أحمد حسام ميدو',
+                                club: 'الأهلي',
+                                number: '15'
+                            })
+
+                            //- Third Player Card
+                            +statusCard({
+                                title: 'مشاركات بالدقائق',
+                                image: 'https://placehold.co/70x70',
+                                name: 'إمام عاشور',
+                                club: 'سيراميكا كليوباترا',
+                                number: '3510'
+                            })
+
+                
