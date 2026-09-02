@@ -12,11 +12,13 @@
     -ms-border-radius: 5px;
     
     @include xs {
-        min-height: 85px;
+        min-height: 60px;
+        margin-bottom: 24px;
     }
     
     @include sm {
-        min-height: 85px;
+        min-height: 60px;
+        margin-bottom: 24px;
     }
 
     &__box {
@@ -28,7 +30,14 @@
         @include xs {
             display: grid;
             grid-template-columns: repeat(1, 1fr);
-            padding: 12px;
+            padding: 0;
+            gap: 6px;
+        }
+        
+        @include sm {
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            padding: 0;
             gap: 6px;
         }
     }

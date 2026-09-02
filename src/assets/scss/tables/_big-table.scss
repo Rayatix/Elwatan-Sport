@@ -19,10 +19,18 @@
         text-align: center;
         white-space: nowrap;
         border-radius: unset;
+        
+        @include xs {
+            padding: 6px 6px;
+        }
 
         &:nth-child(2) {
             text-align: right;
             width: 250px;
+
+            @include xs {
+                width: 170px;
+            }
         }
     }
 
@@ -45,6 +53,10 @@
         text-align: center;
         white-space: nowrap;
         border-radius: unset;
+        
+        @include xs {
+            padding: 6px 6px;
+        }
 
         &--points {
             color: #d56d20;
@@ -52,6 +64,10 @@
 
         &--team {
             width: 250px;
+
+            @include xs {
+                width: 170px;
+            }
         }
     }
 
@@ -66,6 +82,10 @@
         object-fit: contain;
         flex-shrink: 0;
         aspect-ratio: 1;
+
+        @include xs {
+            max-width: 25px;
+        }
     }
 
     &__name {
@@ -86,7 +106,7 @@
         display: block;
         max-height: 480px;
         overflow-y: auto;
-        overflow-x: hidden;
+        overflow-x: auto;
     }
 
     &__table thead,

@@ -4,10 +4,10 @@
         grid-template-columns: repeat(2, 1fr);
         gap: 24px;
         margin-bottom: 24px;
-
-        // @include xs {
-        //     display: block;
-        // }
+        
+        @include xs {
+            grid-template-columns: repeat(1, 1fr);
+        }
 
         // @include sm {
         //     display: block;
@@ -18,14 +18,22 @@
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         gap: 24px;
-
-        // @include xs {
-        //     display: block;
-        // }
-
-        // @include sm {
-        //     display: block;
-        // }
+        
+        @include xs {
+            grid-template-columns: repeat(1, 1fr);
+        }
+        
+        @include sm {
+            grid-template-columns: repeat(1, 1fr);
+        }
+        
+        @include md {
+            grid-template-columns: repeat(1, 1fr);
+        }
+        
+        @include lg {
+            grid-template-columns: repeat(1, 1fr);
+        }
     }
 }
 
@@ -40,6 +48,14 @@
     -moz-border-radius: 6px;
     -ms-border-radius: 6px;
     -o-border-radius: 6px;
+    
+    @include xs {
+        padding: 24px 24px;
+    }
+    
+    @include sm {
+        padding: 24px 24px;
+    }
 
     &__title {
         flex-shrink: 0;
