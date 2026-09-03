@@ -21,7 +21,7 @@ block content
                     })
 
                     .club-details-sort-card-container
-                        - for (let i = 0; i < 9; i++)
+                        - for (let i = 0; i < 9; i++) 
                             include include/components/cards/single-competition-card.pug
                 
                 //- News Section
@@ -32,13 +32,31 @@ block content
                         - for (let i = 0; i < 3; i++)
                             include include/components/cards/news-card.pug
 
-                //- Start Table
+                //- Start Tables
                 section.content-box
-                    h3.third-title.js-skeleton
-                        span
-                            | جدول ترتيب الدوري المصري
-                    include include/components/tables/small-table.pug
+                    +title('مجموعات كاس العالم 2026', '/writers-details.html', false)
 
+                    .table-group
+                        .table-group__box
+                            h3.third-title.js-skeleton
+                                span جدول ترتيب الدوري المصري
+                            include include/components/tables/small-table.pug
+
+                    //- .table-group
+                    //-     .table-group__box
+                    //-         h3.third-title.js-skeleton
+                    //-             span جدول ترتيب الدوري المصري
+                    //-         include include/components/tables/small-table.pug
+
+                            //- .table-group__box
+                            //-     h3.third-title.js-skeleton
+                            //-         span جدول ترتيب الدوري الإنجليزي
+                            //-     include include/components/tables/small-table.pug
+
+                            //- .table-group__box
+                            //-     h3.third-title.js-skeleton
+                            //-         span جدول ترتيب الدوري السعودي
+                            //-     include include/components/tables/small-table.pug
 
                 //- Status Section
                 section.content-box
